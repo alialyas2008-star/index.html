@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AQA Sociology Paper 3 — Revision Hub</title>
+<style>
+:root {
+  --bg:#ffffff; --bg2:#f7f7f5; --bg3:#f0eeea;
+  --txt:#1a1a18; --txt2:#5a5a56; --txt3:#9a9a95;
+  --bdr:rgba(0,0,0,0.1); --bdr2:rgba(0,0,0,0.2); --bdr3:rgba(0,0,0,0.3);
+  --purple:#534AB7; --purple-bg:#EEEDFE; --purple-txt:#3C3489;
+  --teal:#0F6E56; --teal-bg:#E1F5EE; --teal-txt:#085041;
+  --blue:#185FA5; --blue-bg:#E6F1FB; --blue-txt:#0C447C;
+  --amber:#854F0B; --amber-bg:#FAEEDA; --amber-txt:#633806;
+  --coral:#993C1D; --coral-bg:#FAECE7; --coral-txt:#712B13;
+  --r8:8px; --r12:12px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1c1c1a; --bg2:#252523; --bg3:#2e2e2b;
+    --txt:#f0ede8; --txt2:#a0a09a; --txt3:#6e6e68;
+    --bdr:rgba(255,255,255,0.1); --bdr2:rgba(255,255,255,0.2); --bdr3:rgba(255,255,255,0.3);
+    --purple-bg:#26215C; --purple-txt:#CECBF6;
+    --teal-bg:#04342C; --teal-txt:#9FE1CB;
+    --blue-bg:#042C53; --blue-txt:#B5D4F4;
+    --amber-bg:#412402; --amber-txt:#FAC775;
+    --coral-bg:#4A1B0C; --coral-txt:#F5C4B3;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg3);color:var(--txt);min-height:100vh;}
+.shell{max-width:800px;margin:0 auto;padding:2rem 1.25rem 5rem;}
+
+/* Header */
+.masthead{border-bottom:2px solid var(--txt);padding-bottom:1rem;margin-bottom:1.5rem;}
+.masthead-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;}
+.masthead h1{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt);}
+.masthead h2{font-size:28px;font-weight:700;color:var(--txt);line-height:1.15;margin:6px 0;}
+.masthead h3{font-size:15px;font-weight:400;color:var(--txt2);margin-bottom:10px;}
+.masthead-meta{font-size:12px;color:var(--txt3);display:flex;gap:16px;flex-wrap:wrap;}
+.masthead-meta span{display:flex;align-items:center;gap:4px;}
+
+/* Nav */
+.nav-bar{display:flex;gap:0;margin-bottom:1.75rem;border:1px solid var(--bdr2);border-radius:var(--r8);overflow:hidden;background:var(--bg2);}
+.nav-btn{flex:1;padding:9px 4px;border:none;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;background:transparent;color:var(--txt2);transition:all 0.15s;border-right:1px solid var(--bdr);}
+.nav-btn:last-child{border-right:none;}
+.nav-btn:hover{background:var(--bg3);color:var(--txt);}
+.nav-btn.active{background:var(--bg);color:var(--txt);font-weight:600;}
+
+/* Topic cards — home */
+.topic-list{display:flex;flex-direction:column;gap:10px;}
+.topic-card{background:var(--bg);border:1px solid var(--bdr);border-radius:var(--r12);padding:1.25rem;cursor:pointer;transition:border-color 0.15s,box-shadow 0.15s;}
+.topic-card:hover{border-color:var(--bdr2);box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.tc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:8px;}
+.tc-title{font-size:15px;font-weight:600;color:var(--txt);line-height:1.3;}
+.tc-ref{font-size:11px;color:var(--txt3);white-space:nowrap;}
+.tc-desc{font-size:13px;color:var(--txt2);line-height:1.6;margin-bottom:10px;}
+.tc-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.tc-badges{display:flex;gap:6px;flex-wrap:wrap;}
+.badge{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;}
+.b-blue{background:var(--blue-bg);color:var(--blue-txt);}
+.b-purple{background:var(--purple-bg);color:var(--purple-txt);}
+.b-teal{background:var(--teal-bg);color:var(--teal-txt);}
+.b-amber{background:var(--amber-bg);color:var(--amber-txt);}
+.b-gray{background:var(--bg2);color:var(--txt2);border:1px solid var(--bdr);}
+.tc-qs{font-size:12px;color:var(--txt3);}
+.tc-arrow{color:var(--txt3);font-size:18px;}
+
+/* Topic detail */
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--txt2);cursor:pointer;background:none;border:none;font-family:inherit;padding:0;margin-bottom:1.25rem;transition:color 0.15s;}
+.back-btn:hover{color:var(--txt);}
+.topic-header{background:var(--bg);border:1px solid var(--bdr);border-radius:var(--r12);padding:1.4rem;margin-bottom:1.25rem;}
+.topic-header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+.topic-header h2{font-size:20px;font-weight:700;color:var(--txt);line-height:1.3;}
+.topic-section-ref{font-size:12px;color:var(--txt3);}
+.topic-explanation{font-size:14px;color:var(--txt2);line-height:1.75;margin-bottom:12px;}
+.topic-explanation p{margin-bottom:8px;}
+.topic-explanation p:last-child{margin-bottom:0;}
+.key-thinkers{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.exam-tip{background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:0 var(--r8) var(--r8) 0;padding:10px 14px;font-size:13px;color:var(--amber-txt);line-height:1.6;margin-top:12px;}
+.exam-tip strong{font-weight:600;}
+
+/* Paper-style questions */
+.paper-section-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt3);margin:1.5rem 0 0.75rem;padding-bottom:6px;border-bottom:1px solid var(--bdr);}
+.q-block{background:var(--bg);border:1px solid var(--bdr);border-radius:var(--r12);padding:1.4rem;margin-bottom:1rem;}
+.q-num-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.q-num{width:32px;height:32px;border-radius:50%;background:var(--bg2);border:1px solid var(--bdr2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--txt);flex-shrink:0;}
+.q-type-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--txt3);}
+.q-marks-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--blue-bg);color:var(--blue-txt);margin-left:auto;}
+.item-box{background:var(--bg2);border-left:3px solid var(--blue);border-radius:0 var(--r8) var(--r8) 0;padding:12px 16px;margin-bottom:14px;}
+.item-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--blue-txt);margin-bottom:6px;}
+.item-text{font-size:13px;color:var(--txt);line-height:1.7;font-style:italic;}
+.q-text{font-size:15px;font-weight:500;color:var(--txt);line-height:1.65;margin-bottom:14px;}
+.q-instruction{font-size:13px;color:var(--txt2);margin-bottom:14px;font-style:italic;}
+.answer-area{width:100%;min-height:90px;border:1px solid var(--bdr2);border-radius:var(--r8);padding:11px 13px;font-size:14px;font-family:inherit;color:var(--txt);background:var(--bg);resize:vertical;line-height:1.7;transition:border-color 0.15s,box-shadow 0.15s;}
+.answer-area.essay-area{min-height:180px;}
+.answer-area:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 3px rgba(83,74,183,0.12);}
+.answer-area::placeholder{color:var(--txt3);}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--r8);border:1px solid var(--bdr2);font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;background:var(--bg);color:var(--txt);transition:all 0.15s;}
+.btn:hover{background:var(--bg2);border-color:var(--bdr3);}
+.btn:active{transform:scale(0.98);}
+.btn-ai{background:var(--purple-bg);color:var(--purple-txt);border-color:rgba(83,74,183,0.3);}
+.btn-ai:hover{background:var(--purple-bg);filter:brightness(0.95);}
+
+/* Mark scheme */
+.ms-block{background:var(--teal-bg);border-radius:var(--r8);padding:1rem 1.1rem;margin-top:12px;border-left:3px solid var(--teal);}
+.ms-heading{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--teal-txt);margin-bottom:10px;}
+.ms-item{font-size:13px;color:var(--txt);line-height:1.7;padding:5px 0 5px 20px;position:relative;border-bottom:1px solid rgba(0,0,0,0.05);}
+.ms-item:last-child{border-bottom:none;}
+.ms-item::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700;font-size:11px;top:7px;}
+.ms-note{font-size:12px;color:var(--txt2);font-style:italic;margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);}
+
+/* AI block */
+.ai-block{background:var(--purple-bg);border-radius:var(--r8);padding:1rem 1.1rem;margin-top:12px;border-left:3px solid var(--purple);}
+.ai-heading{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--purple-txt);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.ai-body{font-size:13px;color:var(--txt);line-height:1.75;}
+.ai-body strong{color:var(--purple-txt);font-weight:600;}
+.score-chip{display:inline-flex;align-items:center;font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;margin-left:4px;}
+.sc-hi{background:var(--teal-bg);color:var(--teal-txt);}
+.sc-mid{background:var(--amber-bg);color:var(--amber-txt);}
+.sc-lo{background:var(--coral-bg);color:var(--coral-txt);}
+
+/* Quick fire */
+.qf-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem;}
+.shuffle-btn{width:100%;padding:10px;margin-top:8px;border-radius:var(--r8);border:1px dashed var(--bdr2);background:transparent;color:var(--txt2);font-size:13px;font-family:inherit;cursor:pointer;transition:all 0.15s;}
+.shuffle-btn:hover{background:var(--bg);color:var(--txt);border-color:var(--bdr3);}
+
+/* Essay guide */
+.essay-guide{background:var(--bg);border:1px solid var(--bdr);border-radius:var(--r12);padding:1.1rem 1.25rem;margin-bottom:1.25rem;}
+.essay-guide h4{font-size:13px;font-weight:600;margin-bottom:10px;color:var(--txt);}
+.essay-steps{display:flex;gap:6px;flex-wrap:wrap;}
+.step-pill{font-size:12px;padding:4px 11px;border-radius:20px;background:var(--bg2);border:1px solid var(--bdr);color:var(--txt2);}
+
+/* Loading */
+.loading-dot{animation:blink 1s infinite;}
+@keyframes blink{0%,100%{opacity:0.2}50%{opacity:1}}
+
+/* Section headers */
+.section-title{font-size:22px;font-weight:700;color:var(--txt);margin-bottom:4px;}
+.section-sub{font-size:13px;color:var(--txt2);margin-bottom:1.5rem;line-height:1.6;}
+
+/* Divider */
+.divider{height:1px;background:var(--bdr);margin:1.5rem 0;}
+
+/* Theorist pills — clickable */
+.thinker-pill{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--bg2);border:1px solid var(--bdr);color:var(--txt2);cursor:pointer;transition:all 0.15s;position:relative;}
+.thinker-pill:hover{background:var(--purple-bg);color:var(--purple-txt);border-color:rgba(83,74,183,0.3);}
+
+/* Theorist modal overlay */
+.th-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;}
+.th-modal{background:var(--bg);border:1px solid var(--bdr2);border-radius:var(--r12);padding:1.5rem;max-width:420px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,0.15);position:relative;}
+.th-modal-name{font-size:18px;font-weight:700;color:var(--txt);margin-bottom:2px;}
+.th-modal-meta{font-size:12px;color:var(--txt3);margin-bottom:12px;}
+.th-modal-idea{font-size:14px;color:var(--txt);line-height:1.75;margin-bottom:12px;}
+.th-modal-quote{font-size:13px;color:var(--txt2);line-height:1.65;font-style:italic;background:var(--bg2);padding:10px 14px;border-radius:var(--r8);border-left:3px solid var(--purple);margin-bottom:12px;}
+.th-modal-topics{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.th-modal-close{width:100%;padding:8px;border-radius:var(--r8);border:1px solid var(--bdr2);background:transparent;color:var(--txt2);font-size:13px;font-family:inherit;cursor:pointer;transition:all 0.15s;}
+.th-modal-close:hover{background:var(--bg2);color:var(--txt);}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Masthead styled after AQA paper -->
+  <div class="masthead">
+    <div class="masthead-top">
+      <div>
+        <h1>AQA · A-level Sociology (7192/3)</h1>
+        <h2>Paper 3: Crime and Deviance<br>with Theory and Methods</h2>
+        <h3>Interactive Revision Hub — Full Specification</h3>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:13px;color:var(--txt2);line-height:1.8;">
+          Maximum mark: <strong>80</strong><br>
+          Time allowed: <strong>2 hours</strong><br>
+          <span style="font-size:11px;color:var(--txt3);">Sections 3.3.1 &amp; 3.3.2</span>
+        </div>
+      </div>
+    </div>
+    <div class="masthead-meta">
+      <span>📋 11 topics covered</span>
+      <span>📝 Mark schemes included</span>
+      <span>🤖 AI examiner feedback</span>
+      <span>⚡ Quick fire mode</span>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <div class="nav-bar" id="nav-bar">
+    <button class="nav-btn active" onclick="showSection('home')">Topics</button>
+    <button class="nav-btn" onclick="showSection('crime')">Crime &amp; Deviance</button>
+    <button class="nav-btn" onclick="showSection('methods')">Theory &amp; Methods</button>
+    <button class="nav-btn" onclick="showSection('theorists')">Theorists</button>
+    <button class="nav-btn" onclick="showSection('quickfire')">Quick Fire ⚡</button>
+    <button class="nav-btn" onclick="showSection('essay')">Essays</button>
+  </div>
+
+  <div id="main"></div>
+</div>
+
+<script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+
+const TOPICS = [
+  // ── CRIME & DEVIANCE ──
+  {
+    id:"social-order", section:"3.3.1", part:"crime",
+    title:"Crime, Deviance, Social Order & Social Control",
+    badges:[["b-blue","Crime & Deviance"],["b-purple","Theory"]],
+    explanation:`<p>This topic explores the <strong>sociological definitions</strong> of crime and deviance and examines how society regulates behaviour. Crime refers to behaviour that violates codified law; deviance refers to behaviour that violates social norms but may not be illegal. The boundary between the two is fluid and socially constructed.</p>
+<p><strong>Social order</strong> is maintained through two broad mechanisms. Formal social control operates through the state — police, courts, prisons — enforcing legal norms through coercion and punishment. Informal social control operates through institutions like family, education, peer groups and religion, which socialise individuals into accepting shared norms and values.</p>
+<p>Functionalists (Parsons, Durkheim) see social control as necessary for maintaining consensus and social stability. Marxists (Gramsci, Althusser) argue social control serves ruling class interests — Althusser's Ideological State Apparatuses (ISAs) reproduce capitalism through ideology, while Repressive State Apparatuses (RSAs) enforce compliance. Foucault's concept of the panopticon illustrates how modern surveillance disciplines individuals to self-police.</p>`,
+    thinkers:["Durkheim","Parsons","Becker","Foucault","Gramsci","Althusser","Cohen","Goffman"],
+    tip:"Always link social control to <em>power</em> — who defines crime, who enforces it, and who benefits? Evaluation: does formal control reduce crime or just displace it?",
+    questions:[
+      {
+        num:"01", type:"outline", marks:4,
+        text:"Outline two ways in which social control agencies maintain social order.",
+        ms:[
+          "Formal control — police, courts, prisons deter and punish deviance through legal sanctions; coercive power of the state (Althusser's RSAs: army, police, prison enforce compliance by force)",
+          "Informal control — family, education, religion socialise individuals into internalising shared norms and values; Parsons: primary socialisation produces consensus and conformity without coercion",
+          "Surveillance and self-discipline — Foucault: panopticon as metaphor for modern disciplinary society; CCTV, digital monitoring means individuals internalise surveillance and self-police",
+          "Ideological control — Gramsci: hegemony — ruling class secure consent through cultural and ideological leadership via media, education, religion rather than direct force alone"
+        ]
+      },
+      {
+        num:"02", type:"outline", marks:6,
+        text:"Outline three differences between crime and deviance.",
+        ms:[
+          "Crime breaks formal codified law enforced by the state; deviance breaks informal social norms — all crime is deviant but not all deviance is criminal (e.g. being rude is deviant but not illegal)",
+          "Crime is legally defined and applies across a jurisdiction; deviance is culturally and historically relative — varies by culture, time and place (e.g. homosexuality decriminalised in England and Wales 1967)",
+          "Crime is sanctioned formally through the CJS — police, courts, prison; deviance is sanctioned informally through stigma, social exclusion or disapproval (Goffman: spoiled identity)",
+          "Crime requires formal legal processes to record and prosecute; deviance is largely unmeasured — the dark figure problem is more acute for deviance",
+          "Labelling theory (Becker): neither crime nor deviance is inherent in an act — both are labels applied through social reaction by moral entrepreneurs and enforcement agencies. The same act can be defined differently by different audiences"
+        ]
+      }
+    ]
+  },
+  {
+    id:"distribution", section:"3.3.1", part:"crime",
+    title:"Social Distribution of Crime: Class, Gender & Ethnicity",
+    badges:[["b-blue","Crime & Deviance"],["b-teal","Stratification"]],
+    explanation:`<p>Official crime statistics consistently show <strong>patterns</strong> in who is recorded as committing crime: working-class males and young Black men are overrepresented; women and middle/upper-class people are underrepresented. However, sociologists question whether these patterns reflect actual offending or the operation of the criminal justice system itself.</p>
+<p>On <strong>class</strong>: strain theory (Merton) argues that blocked legitimate means to achieve cultural goals leads working-class individuals to deviant adaptations. Left realists (Lea & Young) point to relative deprivation, marginalisation and subculture. Labelling theorists (Cicourel) argue police typifications over-target working-class areas, producing self-fulfilling statistics.</p>
+<p>On <strong>gender</strong>: Heidensohn's control theory argues women face greater informal control at home and in public. The chivalry thesis (Pollak) claims women receive more lenient treatment from the CJS. Messerschmidt links male offending to doing masculinity.</p>
+<p>On <strong>ethnicity</strong>: Hall et al. (Policing the Crisis) showed how media moral panics racialised crime. The Macpherson Report (1999) identified institutional racism in the Metropolitan Police. Left realists point to structural deprivation in Black communities rather than culture.</p>`,
+    thinkers:["Merton","Cohen","Cloward & Ohlin","Lea & Young","Becker","Cicourel","Heidensohn","Pollak","Messerschmidt","Hall et al.","Macpherson","Walklate"],
+    tip:"Always use patterns <em>and</em> explanations — don't just describe statistics, explain why. Crucially: are stats a reflection of real offending or of policing bias? That's your AO3.",
+    questions:[
+      {
+        num:"01", type:"outline", marks:6,
+        text:"Outline three reasons why females are less likely than males to appear in official crime statistics.",
+        ms:[
+          "Gender role socialisation: females are socialised into passivity, conformity, nurturing and empathy; males into risk-taking, aggression and independence. Females internalise norms more strongly (Oakley: gender role socialisation from birth)",
+          "Informal social control (Heidensohn): women face greater surveillance and control — in the home by male partners, expectations to remain domestic, policing of behaviour in public spaces. This limits both the opportunity and freedom to offend",
+          "Chivalry thesis (Pollak): the CJS treats women more leniently — police less likely to arrest, courts less likely to convict women. Female crime is systematically understated in official statistics; statistics reflect CJS sexism not just offending",
+          "Masculinity theory (Messerschmidt, Connell): crime is a resource for 'doing masculinity' — young men use crime and risk-taking to accomplish hegemonic masculine identity. No equivalent social pressure operates on women",
+          "Liberation thesis (Adler): as women's social position becomes more equal, female crime rises — the gender gap in crime is therefore social/structural not biological. Suggests offending is about opportunity and social norms, not sex"
+        ]
+      },
+      {
+        num:"02", type:"analyse", marks:10,
+        item:"Official crime statistics consistently show that those from lower socioeconomic backgrounds make up the majority of convicted offenders. However, these statistics only reflect crimes that are detected, reported and prosecuted by the criminal justice system.",
+        text:"Applying material from Item A and your knowledge, analyse two reasons why working-class individuals are overrepresented in official crime statistics.",
+        ms:[
+          "Selective law enforcement / labelling (Becker, Cicourel): police use typifications and stereotypes — over-patrol working-class areas, more likely to stop, arrest and charge working-class individuals regardless of actual behaviour. Becomes a self-fulfilling prophecy: official statistics then confirm the stereotype, justifying further targeting. Item supports this: stats only reflect crimes 'detected and prosecuted' — policing decisions shape what is recorded",
+          "Strain theory (Merton): cultural goals (wealth, success, status) are shared across society but legitimate means to achieve them are unequally distributed. Working-class individuals face blocked opportunities — educational underachievement limits meritocratic routes. Respond through deviant adaptations: innovation (using illegal means to achieve goals). Relative deprivation (Lea & Young): poverty experienced alongside media images of affluence creates sense of injustice that drives crime",
+          "Status frustration (Cohen): working-class boys fail by the standards of middle-class-dominated school system; form delinquent subcultures as a collective solution — inverting mainstream values to achieve status by alternative means",
+          "AO3: working-class crime is more visible and more policed. White-collar and corporate crime of the middle and upper classes causes far greater financial harm but is largely undetected and unprosecuted (Sutherland: white-collar crime). Item directly supports critique: statistics are partial, reflecting the priorities of a class-biased CJS"
+        ]
+      }
+    ]
+  },
+  {
+    id:"media-crime", section:"3.3.1", part:"crime",
+    title:"The Media and Crime",
+    badges:[["b-blue","Crime & Deviance"],["b-amber","Contemporary"]],
+    explanation:`<p>The media plays a major role in shaping public perceptions of crime, but sociologists argue this representation is systematically <strong>distorted</strong>. Media coverage dramatically overrepresents violent and sexual crime relative to actual statistics. It creates <strong>moral panics</strong> around particular groups defined as threats to social order.</p>
+<p>Stan Cohen's study of mods and rockers in the 1960s showed how media coverage amplified and distorted events, creating <strong>folk devils</strong> (scapegoated groups) and generating public anxiety that justified increased policing. This led to a <strong>deviance amplification spiral</strong>: more police attention → more arrests → more media coverage → more public fear → more policing.</p>
+<p>Hall et al. (Policing the Crisis, 1978) applied this to the mugging panic of the 1970s, arguing that media racialised street crime to divert attention from the crisis of capitalism and justify authoritarian state responses. The concept of <strong>news values</strong> (Young) explains why dramatic, negative, unusual events dominate crime coverage.</p>
+<p>The media also constructs a <strong>victim hierarchy</strong> — white, middle-class, female victims receive disproportionate coverage (Christie's 'ideal victim'), distorting public understanding of who is really at risk.</p>`,
+    thinkers:["Cohen","Hall et al.","Young","Christie","Jewkes","Surette","Baudrillard"],
+    tip:"Moral panic is a process with stages — don't just name it, describe how it works: folk devil → media exaggeration → moral entrepreneurs → disproportionate response → deviancy amplification.",
+    questions:[
+      {
+        num:"01", type:"outline", marks:4,
+        text:"Outline two ways in which the media give a distorted view of crime.",
+        ms:[
+          "Overrepresentation of violent and sexual crime: media focuses on dramatic, newsworthy crimes — Cohen & Young: news values prioritise violence, novelty, celebrity. Creates false impression that violent crime is far more common than statistics show; public overestimates personal risk of victimisation",
+          "Moral panics (Cohen): media coverage of particular groups (mods/rockers, Black youth) as folk devils creates exaggerated public concern disproportionate to actual threat. Deviance amplification spiral — media attention increases policing, which produces more arrests, apparently confirming the panic",
+          "Victim hierarchy: media gives disproportionate coverage to 'ideal victims' (Christie) — young white middle-class women. Black, working-class, sex worker or male victims receive less coverage — distorts public understanding of who is victimised",
+          "Racialisation of crime: Hall et al. — media links ethnicity and crime in public consciousness through selective reporting, reinforcing stereotypes and justifying disproportionate policing of Black communities"
+        ]
+      },
+      {
+        num:"02", type:"analyse", marks:10,
+        item:"Stan Cohen argued that the media plays a key role in creating moral panics about crime. The media identifies groups as threats to social values, which can lead to a disproportionate response from the police and public. However, not all sociologists agree that the media is the primary cause of public fear of crime.",
+        text:"Applying material from Item A and your knowledge, analyse two reasons why moral panics about crime may develop.",
+        ms:[
+          "Media construction of folk devils (Cohen): media selects and exaggerates events, labelling certain groups as threats — mods and rockers framed as symbols of social breakdown. Moral entrepreneurs (Becker) amplify the threat; public anxiety grows. Item: 'identifies groups as threats to social values'. Media's news values (novelty, negativity, proximity) make crime ideal material for panic-generation",
+          "Ruling class ideology (Hall et al.): moral panics are not random but ideologically motivated. The 1970s mugging panic served to distract attention from the economic crisis of capitalism and justify expansion of state power (authoritarian populism). Scapegoating Black youth displaced structural tensions onto a criminalised minority — crisis management through crime panic",
+          "Deviance amplification spiral (Wilkins, Cohen): once a group is labelled, increased policing produces more recorded crime from that group, which appears to confirm the original panic, generating further media coverage and further policing — self-reinforcing cycle. Item: 'disproportionate response from police' feeds back into the spiral",
+          "AO3: item acknowledges 'not all sociologists agree'. Left realists argue public fear of crime is rational — reflects real victimisation in poor communities, not media manipulation. Postmodernists (Baudrillard) argue in the media age, the simulation of crime becomes more real than crime itself — hyperreality"
+        ]
+      },
+      {
+        num:"03", type:"evaluate", marks:30,
+        item:"Some sociologists argue that the best way to understand crime and deviance is to examine the way in which individuals and groups are labelled as deviant by powerful social groups. Once labelled, individuals may find it difficult to escape that label and may go on to commit further acts of deviance.",
+        text:"Applying material from Item B and your knowledge, evaluate the usefulness of labelling theory in understanding crime and deviance.",
+        ms:[
+          "Becker (Outsiders, 1963): deviance is not inherent in an act but in the reaction of others. 'Deviant is one to whom the label has been successfully applied.' Moral entrepreneurs create rules; enforcers apply them selectively. Item: 'labelled as deviant by powerful social groups' — power to label is unequally distributed",
+          "Primary and secondary deviance (Lemert): primary deviance is initial rule-breaking with little impact on identity. Secondary deviance occurs when individual internalises the deviant label — deviant identity becomes master status (Becker), reorganising self-concept and social relationships",
+          "Self-fulfilling prophecy: labelled individual accepts identity, joins deviant subculture, cuts off from legitimate opportunities — fulfils the original prophecy. Deviance amplification spiral (Cohen): societal reaction creates more deviance than it prevents",
+          "Cicourel (The Social Organisation of Juvenile Justice): police use typifications — working-class, Black, young males are targeted; middle-class families negotiate reduced charges. Statistics reflect typifications, not objective offending rates",
+          "Applied to mental illness (Rosenhan, Szasz): psychiatric labels stick regardless of subsequent behaviour — institutionalisation as amplification of deviance. Goffman: total institutions create spoiled identities",
+          "Evaluation — determinism: labelling theory oversimplifies. Not everyone who is labelled becomes a secondary deviant — people resist labels. Assumes passive individual who internalises label without agency",
+          "Evaluation — ignores initial causes: why did primary deviance occur? Labelling theory focuses on reaction, not structural causes — Marxists argue poverty and inequality drive crime regardless of labelling; left realists: labelling ignores real harm to working-class victims",
+          "Evaluation — ignores victim: over-focus on offender's experience of labelling; neglects impact on victims of crime (left realism critique)",
+          "Evaluation — practical application: diversion schemes, restorative justice, decriminalisation policies draw on labelling theory — avoid labelling minor offenders to prevent secondary deviance. Applied in youth justice. Successful application suggests theory has validity",
+          "Evaluation — Marxism: ignores class and power more systematically — labels are not randomly applied but reflect ruling class interests. Chambliss: laws themselves serve bourgeois interests, not just enforcement practices",
+          "Conclusion: labelling theory offers powerful insights into how CJS processes create and amplify crime, and explains class and ethnic patterns in statistics. However, it is criticised for ignoring structural causes of primary deviance, overemphasising the power of labels, neglecting victims, and failing to explain why some resist labels while others do not"
+        ]
+      }
+    ]
+  },
+  {
+    id:"globalisation", section:"3.3.1", part:"crime",
+    title:"Globalisation, Green Crime & State Crime",
+    badges:[["b-blue","Crime & Deviance"],["b-amber","Contemporary"]],
+    explanation:`<p><strong>Globalisation</strong> has transformed crime in the late 20th and 21st centuries. Criminal networks now operate transnationally — drug cartels, people traffickers, cybercriminals, and money launderers operate across national borders in ways that individual nation-states cannot easily police. Castells argues global criminal networks mirror the structure of legitimate global capitalism.</p>
+<p><strong>Green crime</strong> refers to harm done to the natural environment. Traditional criminology ignores environmental harm because much of it is legal. Green criminologists (South, White) argue that harm rather than legality should define crime. They distinguish primary green crime (direct environmental harm — pollution, deforestation) from secondary green crime (crimes arising from the state's response to environmental issues, such as corruption). The problem is that powerful corporations and states commit the most serious environmental harm with near-impunity.</p>
+<p><strong>State crime</strong> refers to illegal or harmful acts committed by governments or their agents. Green (1990) defines it as crimes committed by state agencies in pursuit of state goals. Tombs & Whyte identify state-corporate crime where governments and corporations collude. Examples include genocide, torture, illegal surveillance and war crimes. The difficulty of prosecuting the powerful is a key theme.</p>`,
+    thinkers:["Castells","South","White","Green","Tombs & Whyte","Chambliss","Held","Cohen (Stanley)"],
+    tip:"Green crime and state crime both challenge traditional definitions — excellent for showing critical thinking. The key tension: who decides what counts as crime, and does the law protect the powerful?",
+    questions:[
+      {
+        num:"01", type:"outline", marks:4,
+        text:"Outline two ways in which globalisation has created new patterns of crime.",
+        ms:[
+          "Transnational organised crime: globalisation enables criminal networks to operate across borders — drug trafficking, people smuggling, cybercrime, money laundering operate through global supply chains states struggle to police (Castells: global criminal networks mirror legitimate global economy)",
+          "Cybercrime: the internet creates new crime types with global reach regardless of geography — identity theft, fraud, hacking, phishing, online terrorism. Offender and victim may be in different continents; jurisdiction is unclear",
+          "Glocalisation of crime: global criminal organisations (cartels, trafficking networks) integrate local gangs into international supply chains — local crime becomes part of global criminal economy",
+          "Consumer demand driving global crime: demand in wealthy nations for cheap goods, drugs, sex drives global trafficking networks — globalisation of markets creates globalisation of crime"
+        ]
+      },
+      {
+        num:"02", type:"evaluate", marks:20,
+        item:"Green criminologists argue that some of the most serious harms to people and the planet are committed by powerful corporations and states. They argue that traditional criminology has too narrow a definition of crime, focused only on behaviour that breaks existing law. Human rights and global justice approaches suggest we need a broader definition of crime.",
+        text:"Applying material from Item B and your knowledge, evaluate the usefulness of a green criminology approach to understanding crime.",
+        ms:[
+          "Green criminology (South, White): argues traditional criminology is too narrow — defined by legal positivism (crime = what the law says is crime). Green criminology uses harm-based definition: environmental damage, animal rights violations, biodiversity loss are crimes even if legal. Item: 'too narrow a definition of crime focused only on behaviour that breaks existing law'",
+          "Primary green crimes (South): direct environmental harm — illegal dumping of toxic waste, illegal logging, poaching protected species, pollution. These are most directly harmful to ecosystems and human health but often under-prosecuted because perpetrators are powerful corporations",
+          "Secondary green crimes: illegal acts arising from the state's response — bribery of environmental inspectors, corruption in enforcement agencies. State-corporate crime: Tombs & Whyte — states collude with corporations to avoid regulation (regulatory capture)",
+          "Transnational dimension: environmental damage crosses borders — acid rain, ocean pollution, deforestation in Amazon affects global climate. No single state has jurisdiction; international law is weak and non-binding. Paris Agreement non-compliance has no enforcement mechanism",
+          "Evaluation — definitional problem: if we extend crime beyond what is illegal, where does it stop? Could criminalise all carbon emissions, meat-eating, etc. Lack of clear boundary undermines the concept's utility for policy and prosecution; creates ideological, not legal, definition",
+          "Evaluation — anthropocentric vs biocentric: traditional criminology is human-centred; green criminology is accused of impractical biocentrism (treating all species as equal). However: anthropocentric approach clearly fails — major environmental harms ignored by CJS (item: 'too narrow')",
+          "Evaluation — power and enforcement: green criminology correctly identifies that the most harmful actors (corporations, states) are the least prosecuted. But identifying this problem does not solve it — structural power of capital means effective green crime enforcement may be impossible without fundamental social change (Marxist critique)",
+          "Evaluation — human rights approach: links green crime to human rights — environmental damage violates the right to clean water, air, land. More tractable legally than biocentrism; can use existing human rights frameworks internationally",
+          "Conclusion: green criminology valuably expands the field to address harms that traditional criminology ignores and correctly identifies the power of corporations and states in perpetuating environmental harm. However, it faces definitional challenges and structural obstacles to enforcement that limit its practical application"
+        ]
+      }
+    ]
+  },
+  {
+    id:"crime-control", section:"3.3.1", part:"crime",
+    title:"Crime Control, Punishment, Prevention & Victims",
+    badges:[["b-blue","Crime & Deviance"],["b-purple","Theory"]],
+    explanation:`<p>Sociologists have developed competing approaches to <strong>crime prevention and control</strong>. Situational crime prevention (SCP) — associated with right realism (Wilson, Clarke) — aims to reduce opportunities for crime through target hardening, surveillance, and environmental design. It assumes a rational offender who weighs up risks and benefits.</p>
+<p>Social crime prevention focuses on addressing the root causes of crime — poverty, poor socialisation, unemployment — through social programmes. Left realists (Lea & Young) argue SCP treats symptoms and not causes. Marxists argue crime control simply maintains ruling class interests.</p>
+<p>Approaches to <strong>punishment</strong> include deterrence (classical school), rehabilitation (positivist criminology), retribution (just deserts), incapacitation, and restorative justice. Foucault's Discipline and Punish traces the shift from public physical punishment to modern disciplinary surveillance. Garland (Culture of Control) charts a shift from rehabilitative modernism to actuarial risk management.</p>
+<p><strong>Victims</strong> are often neglected in traditional criminology. Christie's 'ideal victim' concept shows how the CJS responds differentially to victims. Victim surveys (Crime Survey for England and Wales) reveal the dark figure of crime. Zedner emphasises victim-centred criminology. Left realists highlight working-class victimisation.</p>`,
+    thinkers:["Wilson & Kelling","Clarke","Lea & Young","Garland","Foucault","Christie","Zedner","Durkheim","Beccaria"],
+    tip:"Right realism → situational prevention. Left realism → social prevention. Always evaluate: does SCP just displace crime? Does rehabilitation work? Use evidence from recidivism rates.",
+    questions:[
+      {
+        num:"01", type:"analyse", marks:10,
+        item:"Situational crime prevention strategies aim to reduce the opportunity for crime. These strategies assume that the criminal makes a rational decision to commit crime based on perceived risks and benefits. One prevention strategy is to install a burglar alarm to reduce the risk of being burgled.",
+        text:"Applying material from Item A and your knowledge, analyse two reasons why situational crime prevention strategies may not be effective in reducing crime.",
+        ms:[
+          "Displacement (Clarke & Mayhew): SCP does not eliminate crime but displaces it — temporally (different time), spatially (different area), tactically (different method), or by target. Rational offenders adapt around obstacles. Item states SCP assumes rational offenders calculating costs/benefits — the same rational actor can rationally calculate how to avoid the prevention measure. Overall crime rate unchanged; crime merely relocated",
+          "Fails to address root causes (left realism, Lea & Young): SCP treats the symptom (opportunity) not the disease (relative deprivation, inequality, unemployment, social exclusion). Items like burglar alarms protect those who can afford them in better-off areas — poorer areas remain vulnerable. Wilson & Kelling's broken windows still sidesteps structural inequality. Social crime prevention (tackling poverty, education) more effective long-term",
+          "Not all crime is rational: item explicitly assumes rational cost-benefit calculation. Impulsive crime, crimes of passion, violence under the influence of alcohol or drugs do not involve rational deliberation — deterrence/prevention calculus doesn't apply. Much violent crime in domestic settings cannot be prevented by environmental design",
+          "Only addresses visible/street crime: SCP focuses on burglary, car crime, street robbery — ignores corporate crime, white-collar crime, domestic violence, state crime. Reinforces class bias in criminology and CJS; protects propertied classes rather than addressing serious harms"
+        ]
+      },
+      {
+        num:"02", type:"outline", marks:6,
+        text:"Outline three sociological explanations of why some groups are more likely to be victims of crime than others.",
+        ms:[
+          "Lifestyle/routine activities theory (Hindelang, Cohen & Felson): victimisation risk linked to lifestyle — time spent in public spaces, association with potential offenders, lack of capable guardianship. Young men at risk because of lifestyle; elderly less at risk despite fear of crime",
+          "Structural inequality (left realism, Lea & Young): working-class and Black communities experience highest victimisation rates — concentrated in under-policed, deprived areas with high levels of intra-community crime. Relative deprivation drives both offending and victimisation within same communities",
+          "Ideal victim hierarchy (Christie): CJS and media construct hierarchy of 'deserving' victims — young white women, elderly, children receive most attention and support. Sex workers, homeless, those with criminal records are 'unideal' victims — less likely to be believed, supported or have cases prosecuted",
+          "Repeat victimisation: those already victimised are disproportionately likely to be victimised again — same property, same person. Concentrated in deprived areas. Explains why crime statistics show highly unequal distribution of victimisation",
+          "Domestic violence and patriarchy (feminist criminology): women are disproportionately victimised within the home by male partners. Traditional criminology and CJS historically ignored domestic violence — feminist campaigning forced recognition of it as a crime (Dobash & Dobash)"
+        ]
+      }
+    ]
+  },
+
+  // ── THEORY & METHODS ──
+  {
+    id:"research-methods", section:"3.3.2", part:"methods",
+    title:"Research Methods: Quantitative & Qualitative",
+    badges:[["b-purple","Theory & Methods"]],
+    explanation:`<p>Sociologists use a range of research methods, broadly divided into <strong>quantitative</strong> and <strong>qualitative</strong> approaches. The choice of method reflects both practical constraints and theoretical commitments.</p>
+<p><strong>Quantitative methods</strong> — questionnaires, structured interviews, official statistics, experiments — produce numerical data that can be analysed statistically. They are associated with the positivist tradition (Durkheim, Comte), which seeks objective, scientific knowledge of society. They are high in <strong>reliability</strong> (results can be replicated) but often lower in <strong>validity</strong> (they may not capture the true meaning of social behaviour).</p>
+<p><strong>Qualitative methods</strong> — unstructured interviews, participant observation, focus groups, documents — produce rich, detailed data that accesses meaning and subjective experience. They are associated with interpretivism (Weber, Schutz) and are higher in validity but lower in reliability and representativeness.</p>
+<p>The choice of method involves <strong>practical</strong> considerations (cost, access, time, researcher skills), <strong>ethical</strong> considerations (consent, harm, confidentiality, deception) and <strong>theoretical</strong> considerations (positivist vs interpretivist assumptions about the nature of social reality). The PET framework is essential for evaluating any research design.</p>`,
+    thinkers:["Durkheim","Weber","Atkinson","Cicourel","Goffman","Glaser & Strauss","BSA","Hawthorne"],
+    tip:"For any methods question use PET: Practical, Ethical, Theoretical. Always link your chosen method to the epistemological tradition it belongs to — positivism or interpretivism.",
+    questions:[
+      {
+        num:"05", type:"outline-explain", marks:10,
+        text:"Outline and explain two advantages of using official statistics in sociological research.",
+        ms:[
+          "Scale and representativeness (practical): official statistics cover entire populations — the Crime Survey for England and Wales interviews 35,000+ households. No individual sociologist could replicate this scale. Enables identification of national patterns, longitudinal trends over decades, and regional comparisons — essential for testing sociological theories about structural causes of crime",
+          "Reliability (theoretical/positivist): collected using standardised, repeatable procedures allowing comparison across time and place. Durkheim used official suicide statistics in his classic positivist study — enabled identification of social patterns and testing of hypotheses about social integration. Allows correlational and causal analysis consistent with scientific method",
+          "Cost and accessibility (practical): already collected at public expense — free for secondary analysis. Saves researcher time and funding; decades of longitudinal data available immediately. Enables replication of previous studies",
+          "AO3: dark figure of crime — much crime goes unreported or unrecorded. Social construction: police recording practices, changes in law, victim underreporting mean statistics don't represent objective reality of crime (Cicourel: stats reflect typifications of officers, not actual offending rates)"
+        ]
+      },
+      {
+        num:"06", type:"outline", marks:4,
+        text:"Outline two ethical considerations a sociologist must take into account when conducting covert participant observation with a criminal gang.",
+        ms:[
+          "Informed consent: participants cannot consent if research is covert — fundamental breach of BSA ethical guidelines. Some researchers justify covert methods as the only way to access authentic behaviour (Venkatesh, Holdaway) but this involves systematic deception, violating participants' autonomy and right to know they are being studied",
+          "Protection of participants from harm: information gathered could expose participants to legal prosecution. Researcher has duty of confidentiality and anonymity — but also faces moral dilemma if witnessing serious crimes. Holdaway's police research — witnessed misconduct; loyalty to research vs duty to report",
+          "Harm to researcher: covert fieldwork in criminal organisations poses serious personal danger. Institutions have a duty of care; individual researcher must assess and manage risk. BSA guidelines acknowledge researcher safety as an ethical obligation",
+          "Right to withdraw: covert subjects cannot choose to withdraw from a study they don't know is being conducted — further violation of autonomy and informed consent principles"
+        ]
+      }
+    ]
+  },
+  {
+    id:"positivism", section:"3.3.2", part:"methods",
+    title:"Positivism, Interpretivism & the Nature of Social Facts",
+    badges:[["b-purple","Theory & Methods"]],
+    explanation:`<p><strong>Positivism</strong>, associated with Comte and Durkheim, holds that sociology should be modelled on the natural sciences. Social facts — patterns of behaviour external to individuals (suicide rates, crime rates, divorce rates) — can be measured objectively and causal laws identified. Durkheim's study of suicide used official statistics to show that even the most personal act has social causes (level of social integration and moral regulation).</p>
+<p><strong>Interpretivism</strong>, associated with Weber and later phenomenologists (Schutz, Berger & Luckmann), argues that because humans act on the basis of meanings, sociology must understand the subjective meaning actors attach to their behaviour (Verstehen — empathetic understanding). Social reality is not an objective thing to be measured but is constantly constructed through social interaction.</p>
+<p>The debate has methodological consequences: positivists favour quantitative methods; interpretivists favour qualitative methods. However, most contemporary sociologists use mixed methods, recognising that both approaches offer valuable insights. <strong>Triangulation</strong> — using multiple methods on the same topic — increases validity and reliability.</p>`,
+    thinkers:["Comte","Durkheim","Weber","Schutz","Berger & Luckmann","Garfinkel","Giddens","Atkinson"],
+    tip:"Durkheim = positivism, social facts, quantitative. Weber = interpretivism, Verstehen, qualitative. Always link epistemology to method choice — why does a positivist use a questionnaire?",
+    questions:[
+      {
+        num:"05", type:"outline-explain", marks:10,
+        text:"Outline and explain two differences between positivist and interpretivist approaches to sociological research.",
+        ms:[
+          "Nature of social reality: positivism (Durkheim) holds that society has objective, external social facts that exist independently of individuals and can be measured — suicide rates, crime rates are real phenomena. Interpretivism (Weber, Schutz) argues social reality is constructed through the meanings actors give to their behaviour — there are no objective social facts independent of human interpretation. Berger & Luckmann: 'The Social Construction of Reality'",
+          "Methods and data: positivists favour quantitative methods — surveys, experiments, official statistics — producing numerical data that can be analysed statistically to identify patterns and causal laws. Interpretivists favour qualitative methods — unstructured interviews, participant observation — producing rich data that accesses actors' subjective meanings and achieves Verstehen. Durkheim used official statistics; Goffman used observation",
+          "Value freedom: positivists believe sociology can and should be value-free and objective, modelled on natural science. Interpretivists (Weber) acknowledge researcher values inevitably shape topic choice, interpretation, and presentation — advocate value transparency rather than false claims to objectivity",
+          "Goal: positivists seek nomothetic knowledge — universal generalisable laws applicable to all societies. Interpretivists seek ideographic knowledge — deep contextual understanding of particular situations and the meanings actors create within them. Different epistemological assumptions about what sociology can and should achieve"
+        ]
+      },
+      {
+        num:"06", type:"outline", marks:4,
+        text:"Outline two reasons why sociologists might use participant observation rather than questionnaires when researching criminal subcultures.",
+        ms:[
+          "Validity and access to meanings (interpretivist): participant observation allows researcher to observe behaviour in its natural setting and access the meanings participants attach to their actions — verstehen. Questionnaires impose researcher's categories and may not capture the authentic norms and values of criminal subcultures. Whyte (Street Corner Society) and Venkatesh demonstrate how observation reveals what surveys cannot",
+          "Authenticity and trust: members of criminal subcultures are unlikely to answer questionnaires honestly about illegal activities — high social desirability bias. Participant observer who gains trust over time accesses authentic behaviour and views; questionnaire responses would be misleading",
+          "Sensitivity of topic (practical/ethical): criminal subcultures cannot be accessed through formal sampling or postal surveys — members are dispersed, distrustful, and not listed in any sampling frame. Observation through snowball sampling or gatekeepers is the only viable access strategy",
+          "Hawthorne effect: questionnaire completion is an artificial situation that alters behaviour. Observation in natural setting (especially covert) minimises reactivity — though ethical concerns arise with covert observation"
+        ]
+      }
+    ]
+  },
+  {
+    id:"theory", section:"3.3.2", part:"methods",
+    title:"Consensus, Conflict, Structural & Social Action Theories",
+    badges:[["b-purple","Theory & Methods"],["b-teal","Core Theory"]],
+    explanation:`<p>Sociological theories can be classified along two key dimensions: <strong>structural vs social action</strong>, and <strong>consensus vs conflict</strong>.</p>
+<p><strong>Structural theories</strong> (functionalism, Marxism, feminism) explain social behaviour by reference to large-scale social structures that shape and constrain individuals. <strong>Social action theories</strong> (interactionism, phenomenology, ethnomethodology) focus on how individuals create meaning and social reality through interaction.</p>
+<p><strong>Consensus theories</strong> (functionalism — Parsons, Durkheim) see society as based on shared values, norms and mutual cooperation. Social institutions serve functions that maintain social stability. <strong>Conflict theories</strong> (Marxism — Marx, Althusser; feminism — Walby, Oakley) see society as characterised by conflict between groups with competing interests — classes, genders, ethnic groups.</p>
+<p>Key debates: Can these perspectives be reconciled? Giddens' <strong>structuration theory</strong> attempts to bridge structure and agency — structures are both the medium and outcome of social action. The debate between structure and agency remains central to sociological theory.</p>`,
+    thinkers:["Parsons","Durkheim","Marx","Althusser","Gramsci","Weber","Mead","Goffman","Giddens","Walby","Oakley","Garfinkel"],
+    tip:"For 20-mark essays: intro (define key concepts) → perspective 1 in depth (theory + evidence) → perspective 2 (contrast/develop) → evaluation of both sides → conclusion with overall judgement. AO3 throughout.",
+    questions:[
+      {
+        num:"06", type:"evaluate", marks:20,
+        item:"Marxists see society as based on conflict between social classes. Those who own the means of production are able to exploit those who do not and are also able to impose their views on society. However, different Marxists have different views about the nature of capitalist society and about how social change occurs.",
+        text:"Applying material from Item C and your knowledge, evaluate the usefulness of Marxist approaches in understanding society.",
+        ms:[
+          "Orthodox/structural Marxism (Marx & Engels): economic base (means + relations of production) determines superstructure (law, education, religion, ideology). Bourgeoisie extract surplus value from proletariat. False consciousness prevents class awareness. Historical materialism — capitalism will inevitably be replaced through proletarian revolution",
+          "Althusser: Ideological State Apparatuses (education, media, religion) reproduce capitalist relations through ideology; Repressive State Apparatuses (police, army, prison) enforce order through force. Item: 'able to impose their views on society' — more sophisticated than crude base/superstructure determinism",
+          "Gramsci — hegemony (item: 'different Marxists have different views'): ruling class rule by consent through cultural hegemony, not just economic/physical force. Counter-hegemony possible through trade unions, political parties, organic intellectuals. More voluntaristic; explains why revolution has not occurred despite exploitation",
+          "Applied to crime: Chambliss — laws protect bourgeois property interests; Box — corporate crime massively under-prosecuted; selective enforcement targets working class. Bonger: capitalism creates egoistic conditions breeding crime throughout society",
+          "Evaluation — feminism: Marxism neglects patriarchy as an autonomous system of oppression (Walby: six structures of patriarchy predate capitalism). Gender inequality cannot be reduced to class relations — dual systems theory (Hartmann): capitalism and patriarchy are interlocking systems",
+          "Evaluation — functionalism (Parsons, Davis & Moore): society is based on consensus and shared values, not conflict. Meritocracy enables social mobility; inequality is functional (role allocation). Marxism overestimates class conflict and underestimates social cohesion",
+          "Evaluation — postmodernism (Lyotard): Marxism is a 'grand narrative' falsely claiming to explain all of society — rejected in the fragmented postmodern world. Class is one of many fluid identities; consumption and lifestyle replace class as primary identity. Item of class conflict less applicable in post-industrial societies",
+          "Evaluation — social action (Weber): class is one of three dimensions of stratification (+ status and party). Economic determinism is excessive — ideas, culture and meanings also independently shape society (Protestant Ethic and capitalism). Structures do not mechanically determine outcomes; agency matters",
+          "Conclusion: Marxism offers powerful analysis of class inequality, capitalist power and ideological reproduction, supported by persistent evidence of class-based inequality. However, it is criticised for economic reductionism, neglect of gender and ethnicity, failure to predict capitalism's resilience, and dismissal by postmodernists as an outdated grand narrative"
+        ]
+      },
+      {
+        num:"07", type:"outline-explain", marks:10,
+        text:"Outline and explain two ways in which feminist theory has contributed to our understanding of society.",
+        ms:[
+          "Making women visible (liberal feminism — Oakley): traditional malestream sociology ignored women as subjects of research. Feminist sociologists showed gender inequality is socially constructed not biologically determined — sex (biological) vs gender (social). Applied to research: feminist methodology prioritises women's experiences and challenges androcentric bias in knowledge production",
+          "Patriarchy as a structural system (radical feminism — Millett, Firestone): identified patriarchy — systematic male domination across all institutions (family, work, state, law, media). Domestic violence, rape, sexual harassment understood as instruments of patriarchal control not individual pathology. Transformed understanding of private/domestic sphere as a site of power relations",
+          "Walby's six structures of patriarchy: paid work, household production, culture, sexuality, violence, the state — comprehensive structural account. Explains how patriarchy persists even as women's formal legal equality increases",
+          "Evaluation: feminism is not monolithic — liberal, radical, Marxist and postmodern feminisms disagree fundamentally. Accused of universalising Western, white, middle-class women's experience (Black feminism, intersectionality — Crenshaw: race, class, gender interact). Some argue feminism is now irrelevant in post-feminist era — empirically contested by continuing gender pay gap, domestic violence statistics"
+        ]
+      }
+    ]
+  },
+  {
+    id:"science", section:"3.3.2", part:"methods",
+    title:"Science, Objectivity, Value Freedom & Social Policy",
+    badges:[["b-purple","Theory & Methods"]],
+    explanation:`<p>A central debate in the philosophy of sociology concerns whether sociology can or should be a <strong>science</strong>. Positivists argue it can: social facts exist independently of individuals and can be measured and explained through causal laws. Critics argue the subject matter — conscious, meaning-making humans — makes this impossible and undesirable.</p>
+<p><strong>Popper's falsificationism</strong>: a theory is scientific only if it makes testable predictions that could in principle be proved false. Many sociological theories (Marxism, functionalism) are arguably unfalsifiable — they can explain any evidence. <strong>Kuhn's paradigms</strong>: science operates within dominant paradigms until anomalies accumulate and trigger a scientific revolution. Sociology lacks a single dominant paradigm, suggesting it is pre-scientific.</p>
+<p><strong>Value freedom</strong>: Weber argued sociologists should be objective in collecting data but acknowledged values inevitably influence topic choice. Gouldner criticised the value-free ideal as itself ideological — all research is shaped by the researcher's position. The question of how sociology relates to <strong>social policy</strong> is connected: should sociologists aim to change society, advise government, or maintain critical distance?</p>`,
+    thinkers:["Popper","Kuhn","Weber","Gouldner","Comte","Durkheim","Giddens","Beck","Habermas"],
+    tip:"Know Popper (falsificationism), Kuhn (paradigms/scientific revolutions), Weber (value freedom), Gouldner (value-laden sociology). The Hawthorne effect and reflexivity are key reasons sociology differs from natural science.",
+    questions:[
+      {
+        num:"05", type:"outline-explain", marks:10,
+        text:"Outline and explain two reasons why some sociologists argue sociology can be regarded as a science.",
+        ms:[
+          "Social facts and empirical observation (Durkheim/positivism): Durkheim argued that social facts — patterns in social behaviour such as suicide rates — exist independently of individuals and can be measured objectively using the same methods as natural science. His study of suicide used official statistics to identify correlations between social integration, moral regulation and suicide rates — demonstrating that even personal behaviour has measurable social causes. This suggests sociology can produce reliable, replicable, scientific knowledge",
+          "Falsificationism and hypothesis testing (Popper): sociology can operate scientifically by making predictions that are in principle falsifiable — if evidence contradicts the hypothesis, the theory must be revised or rejected. Sociological research designs (comparative method, surveys) can test hypotheses about causation. The natural science and social science methods share this logical structure",
+          "Triangulation and reliability: use of multiple methods allows sociologists to cross-check findings — methodological triangulation increases reliability. Replication studies can test whether findings hold across different samples and contexts — a scientific criterion",
+          "AO3: Kuhn argues sociology lacks a single dominant paradigm — competing theoretical frameworks (Marxism, functionalism, feminism) mean no cumulative scientific progress in the way natural sciences progress. Reflexivity and the Hawthorne effect mean social research changes what it studies — impossible in natural science"
+        ]
+      },
+      {
+        num:"06", type:"evaluate", marks:20,
+        item:"Some sociologists argue that it is impossible for sociological research to be value-free. They argue that values inevitably influence the research process at every stage, from the choice of topic to the interpretation of findings. Others argue that, while complete value freedom may be impossible, sociologists should still strive for objectivity.",
+        text:"Applying material from Item C and your knowledge, evaluate the view that sociological research can never be value-free.",
+        ms:[
+          "Weber's position: values inevitably influence choice of research topic — sociologists research what they find important or interesting, shaped by their social position and political commitments. However, Weber argued that once a topic is chosen, the researcher should strive for objectivity in data collection and analysis. Value transparency — declaring one's values — is preferable to false claims of neutrality",
+          "Gouldner — the myth of value freedom: attacks Weber's compromise. Value-free 'underlabourer' sociology (advising policy neutrally) is itself ideological — it serves existing power structures by legitimising them. All research is embedded in a social context; the funding, publication, and use of research reflect dominant interests. Item: 'values inevitably influence the research process at every stage'",
+          "Research funding and power: research that challenges dominant interests is less likely to be funded, published or acted upon. Government-commissioned research tends to address questions the government wants answered — structural constraint on supposedly neutral sociology",
+          "Feminist methodology: all knowledge is gendered — malestream sociology produced androcentric knowledge while claiming objectivity. Feminist research explicitly commits to exposing and challenging patriarchy — openly value-laden but arguably more honest about its position (standpoint epistemology, Harding)",
+          "Marxist critique: ruling class ideology shapes what counts as legitimate knowledge. Sociology that claims neutrality may be most ideologically distorted — appearing natural and objective while serving class interests",
+          "Evaluation — science and objectivity remain goals: even if perfect value freedom is impossible, striving for objectivity through transparent methods, peer review, replication, and falsifiability produces more reliable knowledge than openly partisan research. Item: 'while complete value freedom may be impossible, sociologists should still strive for objectivity'",
+          "Evaluation — positivist response: through careful research design, triangulation, large samples and statistical analysis, the impact of individual researcher values can be minimised. Intersubjective agreement — consensus among researchers — approximates objectivity",
+          "Weber's verstehen and empathy: understanding subjective meaning requires engagement; but this does not mean abandoning objectivity — researcher can bracket personal values during interpretation. Distinction between value relevance (choice of topic) and value neutrality (conduct of research)",
+          "Conclusion: the evidence suggests complete value freedom is unachievable — values permeate every stage of research as Gouldner, feminists and Marxists demonstrate. However, this does not mean all research is equally biased. Explicit reflexivity, transparency about values, triangulation and peer review allow sociology to approximate objectivity even if it cannot achieve it absolutely"
+        ]
+      }
+    ]
+  },
+  {
+    id:"modernity", section:"3.3.2", part:"methods",
+    title:"Modernity, Post-modernity & Sociological Theory",
+    badges:[["b-purple","Theory & Methods"]],
+    explanation:`<p><strong>Modernity</strong> refers to the social, economic and cultural conditions of industrial capitalist societies from the 18th century onwards: rationalisation, industrialisation, nation-states, scientific progress, and Enlightenment faith in reason. Classical sociology (Marx, Durkheim, Weber) was a response to modernity.</p>
+<p><strong>Postmodernity</strong> (Baudrillard, Lyotard) refers to a new social condition emerging in the late 20th century, characterised by: rejection of grand narratives; cultural fragmentation; consumption-based identities; media saturation; collapse of the boundaries between reality and representation (hyperreality). Postmodernism rejects the possibility of objective knowledge.</p>
+<p><strong>Late modernity</strong> (Giddens, Beck) offers an alternative — rather than a break with modernity, we live in a radicalised, reflexive modernity. Beck's <strong>risk society</strong>: manufactured risks from industrial progress (climate change, nuclear power) become the organising principle of social life. Giddens' <strong>reflexivity</strong>: individuals and institutions constantly revise their practices in light of new information; traditional identities replaced by the ongoing 'project of the self'.</p>`,
+    thinkers:["Lyotard","Baudrillard","Bauman","Giddens","Beck","Harvey","Jameson","Habermas"],
+    tip:"Distinguish carefully: postmodernity (a type of society — Baudrillard), postmodernism (a theoretical approach — Lyotard), and late modernity (a different diagnosis — Giddens, Beck). Examiners reward precision here.",
+    questions:[
+      {
+        num:"05", type:"outline-explain", marks:10,
+        text:"Outline and explain two features of postmodern society identified by sociologists.",
+        ms:[
+          "Rejection of grand narratives (Lyotard, The Postmodern Condition): in postmodern society, the Enlightenment 'grand narratives' — Marxism, functionalism, science — that promised progress and absolute truth have lost credibility. Society is characterised by a plurality of competing, equally valid perspectives. No single theory can capture the complexity of social reality; knowledge claims are local and provisional, not universal",
+          "Fragmented, consumption-based identities (Bauman — liquid modernity): in postmodern society, traditional collective identities based on class, religion, gender or ethnicity become fluid and unstable. Individuals are consumers who construct multiple, temporary identities through lifestyle choices and consumption. Bauman: 'liquid' modernity — all solid structures melt; uncertainty and insecurity are defining features of postmodern existence",
+          "Hyperreality (Baudrillard): in postmodern society, the media creates a world of simulations — images and signs that no longer refer to any underlying reality. The map precedes the territory; the simulation becomes more real than the original. Crime dramas and news coverage create public understanding of crime that is more powerful than lived experience",
+          "Cultural fragmentation and pastiche (Harvey, Jameson): postmodern culture mixes styles, periods and references without irony. High and low culture collapse; global media creates simultaneous local diversity and homogenisation. Traditional community bonds replaced by individualised, mediated social life"
+        ]
+      },
+      {
+        num:"06", type:"evaluate", marks:20,
+        item:"Some sociologists argue that we now live in a fundamentally different type of society to that which existed in the nineteenth and early twentieth centuries. They argue that we have moved from a modern to a postmodern society. However, other sociologists argue that, while society has changed, we still live in modern conditions.",
+        text:"Applying material from Item C and your knowledge, evaluate the view that we now live in a postmodern rather than a modern society.",
+        ms:[
+          "Postmodern thesis — Lyotard: the defining feature of postmodern society is the collapse of grand narratives. Science, Marxism, religion — all meta-theories claiming universal truth — have lost legitimacy. Knowledge is fragmented, local, and relative. Item: 'fundamentally different type of society' — Lyotard argues this break is epistemological as well as social",
+          "Baudrillard — hyperreality and simulation: postmodern society is characterised by the dominance of media simulations over any underlying reality. Consumer capitalism produces a world of signs without referents. Gulf War example — the media war was more real than the actual war. Fundamental break from modern empirical reality",
+          "Bauman — liquid modernity: all solid social structures of modernity (class, family, career, religion) have dissolved. Individuals freed from but also burdened by constant identity construction through consumption. This constitutes a qualitative break from the structured certainties of modernity",
+          "Evaluation — late modernity (Giddens): no fundamental break; rather a radicalisation of modernity's own logic. Reflexivity — constant self-monitoring by individuals and institutions — intensifies modernity rather than replacing it. Globalisation, detraditionalism, and identity choice are extensions of modernity. Item: 'while society has changed, we still live in modern conditions'",
+          "Evaluation — risk society (Beck): manufactured risks (climate change, nuclear power, GM food) are distinctively modern products — created by industrial capitalism, not its replacement. Society organised around risk management is still fundamentally modern in its structures; we are in 'second modernity' not postmodernity",
+          "Evaluation — Marxist critique: postmodernism is ideology in service of capitalism — fragmentation of class identity and rejection of grand narratives disarms political opposition. Inequality and exploitation persist; abandoning structural analysis is politically convenient for ruling class. Harvey: postmodern condition is a cultural response to 'flexible accumulation' — late capitalism, not post-capitalism",
+          "Evaluation — empirical evidence: class, gender and ethnic inequalities persist and are in some respects increasing — undermines postmodern claim that structural identities have dissolved. Giddens: evidence supports intensified modernity not postmodernity. Welfare states, nation-states, capitalism all persist — modernity's institutions have not been replaced",
+          "Conclusion: postmodern theorists identify genuine changes — cultural fragmentation, identity fluidity, media saturation, loss of traditional certainties. However, Giddens and Beck more convincingly argue that these represent the radicalisation of modernity rather than its replacement. Structural inequalities and modern institutions persist in ways postmodernism cannot explain"
+        ]
+      }
+    ]
+  }
+];
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let currentSection = 'home';
+let currentTopic = null;
+
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+function showSection(s) {
+  currentSection = s;
+  document.querySelectorAll('.nav-btn').forEach((b,i) => {
+    b.classList.toggle('active', ['home','crime','methods','theorists','quickfire','essay'][i] === s);
+  });
+  const mc = document.getElementById('main');
+  if (s === 'home') renderHome(mc);
+  else if (s === 'crime') renderTopicList(mc, 'crime', '3.3.1 Crime &amp; Deviance');
+  else if (s === 'methods') renderTopicList(mc, 'methods', '3.3.2 Theory &amp; Methods');
+  else if (s === 'theorists') renderTheorists(mc);
+  else if (s === 'quickfire') renderQuickfire(mc);
+  else if (s === 'essay') renderEssay(mc);
+}
+
+function renderHome(mc) {
+  currentTopic = null;
+  mc.innerHTML = `
+    <div class="paper-section-label">Section 3.3.1 — Crime and Deviance</div>
+    <div class="topic-list">${TOPICS.filter(t=>t.part==='crime').map(t=>topicCard(t)).join('')}</div>
+    <div class="paper-section-label" style="margin-top:1.75rem">Section 3.3.2 — Theory and Methods</div>
+    <div class="topic-list">${TOPICS.filter(t=>t.part==='methods').map(t=>topicCard(t)).join('')}</div>
+  `;
+}
+
+function renderTopicList(mc, part, label) {
+  currentTopic = null;
+  mc.innerHTML = `
+    <div class="section-title">${label}</div>
+    <div class="section-sub">Click a topic to open it with full explanation, key thinkers and practice questions.</div>
+    <div class="topic-list">${TOPICS.filter(t=>t.part===part).map(t=>topicCard(t)).join('')}</div>
+  `;
+}
+
+function topicCard(t) {
+  return `<div class="topic-card" onclick="openTopic('${t.id}')">
+    <div class="tc-head">
+      <div class="tc-title">${t.title}</div>
+      <div class="tc-ref">${t.section}</div>
+    </div>
+    <div class="tc-desc">${t.explanation.replace(/<[^>]+>/g,'').substring(0,160).trim()}…</div>
+    <div class="tc-footer">
+      <div class="tc-badges">${t.badges.map(b=>`<span class="badge ${b[0]}">${b[1]}</span>`).join('')}</div>
+      <span class="tc-qs">${t.questions.length} question${t.questions.length>1?'s':''} →</span>
+    </div>
+  </div>`;
+}
+
+function openTopic(id) {
+  currentTopic = TOPICS.find(t => t.id === id);
+  const t = currentTopic;
+  const mc = document.getElementById('main');
+  mc.innerHTML = `
+    <button class="back-btn" onclick="goBack()">← Back</button>
+    <div class="topic-header">
+      <div class="topic-header-top">
+        <h2>${t.title}</h2>
+        <span class="topic-section-ref">${t.section}</span>
+      </div>
+      <div class="topic-explanation">${t.explanation}</div>
+      <div style="margin-top:10px;margin-bottom:6px;font-size:12px;font-weight:600;color:var(--txt3);text-transform:uppercase;letter-spacing:0.07em;">Key thinkers</div>
+      <div class="key-thinkers">${t.thinkers.map(th=>`<span class="thinker-pill" onclick="showTheorist('${th.replace(/'/g,"\\'")}')">🔍 ${th}</span>`).join('')}</div>
+      ${t.tip ? `<div class="exam-tip"><strong>Exam tip:</strong> ${t.tip}</div>` : ''}
+    </div>
+    <div class="paper-section-label">Practice Questions</div>
+    ${t.questions.map((q,i) => renderQ(q, `${t.id}-${i}`, t.title)).join('')}
+  `;
+}
+
+function goBack() {
+  if (currentSection === 'home') renderHome(document.getElementById('main'));
+  else if (currentSection === 'crime') renderTopicList(document.getElementById('main'),'crime','3.3.1 Crime &amp; Deviance');
+  else if (currentSection === 'methods') renderTopicList(document.getElementById('main'),'methods','3.3.2 Theory &amp; Methods');
+  else renderHome(document.getElementById('main'));
+}
+
+function renderQ(q, qid, topicLabel) {
+  const typeMap = {evaluate:'Evaluate — essay',analyse:'Analyse',outline:'Outline','outline-explain':'Outline and explain'};
+  const typeLabel = typeMap[q.type] || q.type;
+  const isEssay = q.marks >= 20;
+  return `<div class="q-block" id="qblock-${qid}">
+    <div class="q-num-row">
+      <div class="q-num">${q.num||'Q'}</div>
+      <span class="q-type-label">${typeLabel}</span>
+      <span class="q-marks-badge">[${q.marks} marks]</span>
+    </div>
+    ${q.item ? `<div class="item-box"><div class="item-label">Item</div><div class="item-text">${q.item}</div></div>` : ''}
+    <p class="q-text">${q.text}</p>
+    ${isEssay ? `<p class="q-instruction">Answer in continuous prose. For 20-mark questions: aim for 3–4 developed paragraphs with evaluation. For 30-mark questions: aim for 5–6 paragraphs.</p>` : ''}
+    <textarea class="answer-area${isEssay?' essay-area':''}" id="ans-${qid}" placeholder="${isEssay?'Write your essay answer here — use continuous prose, develop your argument...':'Write your answer here…'}"></textarea>
+    <div class="btn-row">
+      <button class="btn" onclick="toggleMS('${qid}')">📋 Mark scheme</button>
+      <button class="btn btn-ai" onclick="getAI('${qid}', ${encodeQ(q)})">✨ AI feedback ↗</button>
+    </div>
+    <div id="ms-${qid}" style="display:none">
+      <div class="ms-block">
+        <div class="ms-heading">Indicative content — mark scheme</div>
+        ${q.ms.map(p=>`<div class="ms-item">${p}</div>`).join('')}
+        ${isEssay?`<div class="ms-note">For full marks: sustained argument, multiple perspectives, explicit evaluation (AO3), use of Item, specialist vocabulary throughout.</div>`:''}
+      </div>
+    </div>
+    <div id="ai-${qid}"></div>
+  </div>`;
+}
+
+function encodeQ(q) {
+  return "JSON.parse(decodeURIComponent('" + encodeURIComponent(JSON.stringify(q)) + "'))";
+}
+
+function toggleMS(qid) {
+  const el = document.getElementById('ms-'+qid);
+  const btn = document.querySelector('#qblock-'+qid+' .btn:first-child');
+  const showing = el.style.display !== 'none';
+  el.style.display = showing ? 'none' : 'block';
+  btn.textContent = showing ? '📋 Mark scheme' : '🙈 Hide mark scheme';
+}
+
+async function getAI(qid, q) {
+  const answer = document.getElementById('ans-'+qid).value.trim();
+  const el = document.getElementById('ai-'+qid);
+  if (!answer) {
+    el.innerHTML = `<div class="ai-block"><div class="ai-heading">No answer yet</div><div class="ai-body">Write something in the box above first, then click AI feedback.</div></div>`;
+    return;
+  }
+  el.innerHTML = `<div class="ai-block"><div class="ai-heading"><span class="loading-dot">●</span> Marking your answer…</div></div>`;
+  try {
+    const msText = q.ms.join('\n');
+    const r = await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        model:"claude-sonnet-4-6",
+        max_tokens:1000,
+        messages:[{role:"user",content:`You are a strict AQA A-level Sociology examiner. Mark this answer precisely.
+
+Question type: ${q.type} [${q.marks} marks]
+Question: ${q.text}
+${q.item?'Item: '+q.item:''}
+
+Indicative mark scheme:
+${msText}
+
+Student answer:
+${answer}
+
+Format your response EXACTLY like this:
+**Mark: X/${q.marks}**
+One sentence explaining the mark based on AQA bands.
+
+**What worked:**
+2 specific points naming the theorist/concept used correctly.
+
+**What's missing:**
+1-2 specific gaps naming the exact sociologist/concept/AO3 point not used.
+
+**Improve with:**
+One specific sentence they could add verbatim to lift their mark.
+
+Keep total under 150 words. Be precise, direct and use AQA examiner language.`}]
+      })
+    });
+    const data = await r.json();
+    const txt = (data.content||[]).map(c=>c.text||'').join('').trim();
+    const html = txt.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+    const m = txt.match(/(\d+)\s*\/\s*(\d+)/);
+    let chip = '';
+    if(m){const p=parseInt(m[1])/parseInt(m[2]);chip=`<span class="score-chip ${p>=0.75?'sc-hi':p>=0.5?'sc-mid':'sc-lo'}">${m[1]}/${m[2]}</span>`;}
+    el.innerHTML = `<div class="ai-block"><div class="ai-heading">✨ AI examiner feedback ${chip}</div><div class="ai-body">${html}</div></div>`;
+  } catch(e) {
+    el.innerHTML = `<div class="ai-block"><div class="ai-heading">Connection error</div><div class="ai-body">Could not reach AI. Check your internet and try again.</div></div>`;
+  }
+}
+
+function renderTheorists(mc) {
+  const entries = Object.entries(THEORISTS);
+  mc.innerHTML = `
+    <div class="section-title">All Theorists</div>
+    <div class="section-sub">Every key thinker for Paper 3. Click any card to read what they argued in plain English.</div>
+    <input type="text" id="th-search" placeholder="Search by name or topic…" oninput="filterTheorists()" style="width:100%;padding:10px 14px;border:1px solid var(--bdr2);border-radius:var(--r8);font-size:14px;font-family:inherit;background:var(--bg);color:var(--txt);margin-bottom:1.25rem;outline:none;">
+    <div id="th-grid" style="display:flex;flex-direction:column;gap:8px;">
+      ${entries.map(([name,t])=>`
+        <div class="topic-card th-card" data-name="${name.toLowerCase()}" data-topics="${t.topics.join(' ').toLowerCase()}" onclick="showTheorist('${name.replace(/'/g,"\\'")}')">
+          <div class="tc-head">
+            <div>
+              <div class="tc-title">${t.full}</div>
+              <div style="font-size:12px;color:var(--txt3);margin-top:2px;">${t.meta}</div>
+            </div>
+          </div>
+          <div class="tc-desc" style="margin-bottom:8px;">${t.idea.replace(/<[^>]+>/g,'').substring(0,120)}…</div>
+          <div class="tc-badges">${t.topics.slice(0,3).map(tp=>`<span class="badge b-purple">${tp}</span>`).join('')}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function filterTheorists() {
+  const q = document.getElementById('th-search').value.toLowerCase();
+  document.querySelectorAll('.th-card').forEach(card => {
+    const match = card.dataset.name.includes(q) || card.dataset.topics.includes(q) || card.textContent.toLowerCase().includes(q);
+    card.style.display = match ? '' : 'none';
+  });
+}
+function renderQuickfire(mc) {
+  const shortQs = TOPICS.flatMap(t=>t.questions.filter(q=>q.marks<=6).map(q=>({...q,topicTitle:t.title,topicId:t.id})));
+  const pick = [...shortQs].sort(()=>Math.random()-0.5).slice(0,5);
+  mc.innerHTML = `
+    <div class="section-title">Quick Fire Practice ⚡</div>
+    <div class="section-sub">5 short questions (4–6 marks) randomised from across the full spec. Perfect for a timed run before the exam. Write bullet-point answers and check the mark scheme.</div>
+    ${pick.map((q,i)=>renderQ(q,`qf-${i}`,q.topicTitle)).join('')}
+    <button class="shuffle-btn" onclick="renderQuickfire(document.getElementById('main'))">🔀 New set of questions</button>
+  `;
+}
+
+function renderEssay(mc) {
+  const essayQs = TOPICS.flatMap(t=>t.questions.filter(q=>q.marks>=20).map(q=>({...q,topicTitle:t.title})));
+  mc.innerHTML = `
+    <div class="section-title">Essay Practice</div>
+    <div class="section-sub">20 and 30-mark questions — answer in continuous prose. These are where the most marks are available. AO3 evaluation is essential.</div>
+    <div class="essay-guide">
+      <h4>Essay structure — AQA Sociology</h4>
+      <div class="essay-steps">
+        <span class="step-pill">① Intro — define terms, signpost argument</span>
+        <span class="step-pill">② Perspective 1 — theory + theorist + evidence</span>
+        <span class="step-pill">③ Perspective 2 — contrast or develop</span>
+        <span class="step-pill">④ AO3 — evaluate both sides with evidence</span>
+        <span class="step-pill">⑤ Conclusion — overall reasoned judgement</span>
+      </div>
+    </div>
+    ${essayQs.map((q,i)=>renderQ(q,`essay-${i}`,q.topicTitle)).join('')}
+  `;
+}
+
+// Init
+renderHome(document.getElementById('main'));
+
+// ─── THEORIST DATA ────────────────────────────────────────────────────────────
+const THEORISTS = {
+  "Durkheim":{
+    full:"Émile Durkheim",meta:"French sociologist, 1858–1917 · Functionalism & Positivism",
+    idea:"Durkheim believed society is held together by shared values and norms — he called this the <strong>collective conscience</strong>. He argued that crime is actually <em>normal</em> and even <em>useful</em>: it reinforces society's rules by showing what happens when you break them (boundary maintenance), and it can drive social change. He also believed sociology should be scientific — studying 'social facts' like crime rates and suicide rates as objective things that shape individual behaviour.",
+    quote:"Crime is normal because a society exempt from it is utterly impossible.",
+    topics:["Social order","Functionalism","Positivism","Punishment"]
+  },
+  "Parsons":{
+    full:"Talcott Parsons",meta:"American sociologist, 1902–1979 · Functionalism",
+    idea:"Parsons saw society like a human body — every part (family, education, economy, religion) has a job to do to keep the whole thing running smoothly. He believed the family's main job is <strong>primary socialisation</strong> — teaching children the norms and values they need to fit into society. He also introduced the idea of the <strong>sick role</strong> — society tolerates illness only if you try to get better and return to normal life.",
+    quote:"The social system is a system of the actions of individuals.",
+    topics:["Social order","Socialisation","Consensus theory","Family"]
+  },
+  "Becker":{
+    full:"Howard Becker",meta:"American sociologist, b.1928 · Labelling Theory / Interactionism",
+    idea:"Becker's big idea: <strong>deviance isn't in the act itself — it's in the label put on it</strong>. Whether something counts as deviant depends on who does it, who sees it, and whether they have the power to make the label stick. He called people who create and enforce rules <strong>moral entrepreneurs</strong>. His most famous line: 'Deviant is one to whom the label has been successfully applied.'",
+    quote:"Deviance is not a quality of the act the person commits, but rather a consequence of the application of rules and sanctions by others.",
+    topics:["Labelling theory","Crime & deviance","Social control","Media & crime"]
+  },
+  "Foucault":{
+    full:"Michel Foucault",meta:"French philosopher, 1926–1984 · Post-structuralism",
+    idea:"Foucault argued that <strong>power operates through knowledge and surveillance</strong>, not just physical force. His most famous idea is the <strong>panopticon</strong> — a prison design where inmates can never tell if they're being watched, so they constantly self-police. He argued modern society works the same way: CCTV, medical records, school grades — all these make people conform without anyone needing to force them.",
+    quote:"The major effect of the Panopticon [is] to induce in the inmate a state of conscious and permanent visibility that assures the automatic functioning of power.",
+    topics:["Social control","Surveillance","Punishment","Crime control"]
+  },
+  "Gramsci":{
+    full:"Antonio Gramsci",meta:"Italian Marxist, 1891–1937 · Neo-Marxism",
+    idea:"Gramsci asked: if capitalism is so exploitative, why don't workers revolt? His answer: <strong>hegemony</strong> — the ruling class controls society not just through force but through <em>ideas</em>. They make their way of seeing the world seem like common sense through media, education, and religion. But he was more optimistic than Marx — he believed the working class could build <strong>counter-hegemony</strong> through their own intellectuals and culture.",
+    quote:"The ruling class does not merely dominate — it leads, and leads through the production of common sense.",
+    topics:["Social control","Marxism","Ideology","Crime & deviance"]
+  },
+  "Althusser":{
+    full:"Louis Althusser",meta:"French Marxist philosopher, 1918–1990 · Structural Marxism",
+    idea:"Althusser developed Marxism to explain how capitalism survives. He identified two systems: <strong>Repressive State Apparatuses (RSAs)</strong> — police, army, prisons — which control by force; and <strong>Ideological State Apparatuses (ISAs)</strong> — schools, media, religion, family — which control by shaping how we think. He argued education is the most powerful ISA in modern capitalism, teaching us to accept our place.",
+    quote:"The school takes children from every class at infant-school age, and then... drums into them... a certain amount of know-how wrapped in the ruling ideology.",
+    topics:["Marxism","Social control","Ideology","Education"]
+  },
+  "Merton":{
+    full:"Robert K. Merton",meta:"American sociologist, 1910–2003 · Strain Theory",
+    idea:"Merton asked: why do some people turn to crime? His answer: <strong>strain</strong>. Society tells everyone to aim for success (money, status) but not everyone has the legitimate means (good education, jobs) to get there. This creates a strain between goals and means. He identified five responses: <strong>conformity</strong> (keep trying), <strong>innovation</strong> (use illegal means — crime), <strong>ritualism</strong> (give up on the goal but follow the rules), <strong>retreatism</strong> (drop out), and <strong>rebellion</strong> (reject the system).",
+    quote:"It is only when a system of cultural values extols certain common symbols of success... that antisocial conduct appears.",
+    topics:["Strain theory","Crime & deviance","Class & crime","Functionalism"]
+  },
+  "Cohen":{
+    full:"Stanley Cohen",meta:"British sociologist, 1942–2013 · Moral Panics",
+    idea:"Cohen studied the media's reaction to fights between mods and rockers in the 1960s and coined the term <strong>moral panic</strong>. The media massively exaggerated the threat, labelled these groups as <strong>folk devils</strong>, and stirred up public fear. This led to increased police attention, more arrests, and more coverage — a <strong>deviance amplification spiral</strong>. His insight: media coverage of crime can actually <em>create</em> more crime.",
+    quote:"Societies appear to be subject, every now and then, to periods of moral panic.",
+    topics:["Media & crime","Moral panics","Labelling theory","Social control"]
+  },
+  "Cohen (Albert)":{
+    full:"Albert Cohen",meta:"American criminologist, 1918–2014 · Subcultural Theory",
+    idea:"Cohen developed Merton's strain theory to explain <strong>why working-class boys form delinquent gangs</strong>. He argued they experience <strong>status frustration</strong> — they fail in a school system built around middle-class values, so they form subcultures that <em>invert</em> mainstream values. Instead of working hard for grades, they gain status through rule-breaking, vandalism, and fighting.",
+    quote:"The delinquent subculture... takes its norms from the larger culture, but turns them upside down.",
+    topics:["Subcultures","Crime & deviance","Class & crime","Strain theory"]
+  },
+  "Cicourel":{
+    full:"Aaron Cicourel",meta:"American sociologist, b.1928 · Ethnomethodology / Labelling",
+    idea:"Cicourel studied juvenile justice and found that police and courts use <strong>typifications</strong> — stereotypes about what a typical criminal looks like (young, working-class, Black). If you fit the stereotype, you're more likely to be stopped, arrested, and convicted. If you're middle-class, your family can negotiate better treatment. This means official crime statistics <strong>tell us more about police behaviour than actual crime</strong>.",
+    quote:"Official statistics of deviance are the product of the interpretive practices of police, probation officers and courts.",
+    topics:["Crime statistics","Labelling","Class & crime","Ethnicity & crime"]
+  },
+  "Heidensohn":{
+    full:"Frances Heidensohn",meta:"British feminist criminologist, 1942–2021 · Feminist Criminology",
+    idea:"Heidensohn asked: why do women commit so much less crime than men? Her answer: <strong>women are controlled more</strong>. At home, they're expected to be wives and mothers. In public, the threat of male violence restricts where they go and what they do. At work, they face sexual harassment. This <strong>double standard of control</strong> limits women's opportunity to offend — it's not that women are naturally better behaved.",
+    quote:"Women experience greater social control than men, and this accounts for their lower crime rates.",
+    topics:["Gender & crime","Social control","Feminist criminology"]
+  },
+  "Pollak":{
+    full:"Otto Pollak",meta:"German-American criminologist, 1908–1998 · Chivalry thesis",
+    idea:"Pollak argued that female crime is massively <strong>hidden and underrecorded</strong>. Women are naturally more deceitful (a controversial claim), and police and judges treat them more leniently — the <strong>chivalry thesis</strong>. Men in the CJS are less willing to arrest, charge, or convict women. So official statistics make women look less criminal than they really are.",
+    quote:"The chivalrous attitude of men toward women makes it difficult to detect female crime.",
+    topics:["Gender & crime","Crime statistics","CJS"]
+  },
+  "Messerschmidt":{
+    full:"James Messerschmidt",meta:"American criminologist, b.1951 · Masculinities Theory",
+    idea:"Messerschmidt argued that crime is a way of <strong>doing masculinity</strong>. Young men — especially working-class or Black men with few legitimate ways to prove their manhood — use crime, violence, and risk-taking to accomplish a masculine identity. Different types of masculinity lead to different types of crime. This explains why most offenders are male without resorting to biology.",
+    quote:"Crime is a resource for accomplishing masculinity when other resources are unavailable.",
+    topics:["Gender & crime","Masculinity","Crime & deviance","Subcultures"]
+  },
+  "Hall et al.":{
+    full:"Stuart Hall, Chas Critcher et al.",meta:"British cultural theorists, 1978 · Neo-Marxism / Cultural Studies",
+    idea:"In <em>Policing the Crisis</em> (1978), Hall argued that the 1970s media panic about 'mugging' was not just about crime — it was an <strong>ideological response to the crisis of capitalism</strong>. The ruling class used the panic to distract from economic problems, justify expanding state power, and scapegoat Black youth. Crime panics serve political purposes — they shift attention away from structural inequality.",
+    quote:"The mugging panic was one of the first signs we were beginning to enter the 'law and order' society.",
+    topics:["Media & crime","Moral panics","Ethnicity & crime","Marxism"]
+  },
+  "Macpherson":{
+    full:"Sir William Macpherson",meta:"British judge, report published 1999",
+    idea:"Following the murder of Black teenager Stephen Lawrence and the Metropolitan Police's failure to convict his killers, Macpherson led a public inquiry. His report concluded that the Met was guilty of <strong>institutional racism</strong> — not individual racist officers, but racist attitudes and practices embedded in the culture of the organisation. The report made 70 recommendations and led to major changes in policing and equality law.",
+    quote:"The Metropolitan Police Service is institutionally racist.",
+    topics:["Ethnicity & crime","Policing","Institutional racism"]
+  },
+  "Walklate":{
+    full:"Sandra Walklate",meta:"British feminist criminologist, b.1951 · Victimology",
+    idea:"Walklate is known for her work on <strong>victims of crime</strong>, particularly women. She challenged traditional criminology for ignoring victims, especially women victimised in the home. She developed <strong>critical victimology</strong> — questioning who gets recognised as a 'real' victim and who gets blamed. She argued that victim surveys, not official police statistics, give a more accurate picture of victimisation.",
+    quote:"The concept of the ideal victim serves to exclude from consideration those whose victimisation departs from the expected.",
+    topics:["Victims","Gender & crime","Feminist criminology"]
+  },
+  "Lea & Young":{
+    full:"John Lea & Jock Young",meta:"British criminologists, 1984 · Left Realism",
+    idea:"Lea and Young were left realists — they argued that Marxist criminology ignored the real suffering of working-class communities from crime. Their explanation: crime results from the combination of <strong>relative deprivation</strong> (feeling poor compared to others), <strong>marginalisation</strong> (excluded from power), and <strong>subculture</strong> (a group solution). They used their <strong>square of crime</strong> model — offender, victim, police, public — to argue for community-based solutions.",
+    quote:"The task is to explain why the poor commit crimes against the poor.",
+    topics:["Left realism","Crime & deviance","Class & crime","Victimology"]
+  },
+  "Castells":{
+    full:"Manuel Castells",meta:"Spanish sociologist, b.1942 · Network Society",
+    idea:"Castells argued we now live in a <strong>network society</strong> where power flows through global information networks rather than nation-states alone. He applied this to crime: <strong>global criminal organisations mirror legitimate global capitalism</strong> — they are flexible, networked, transnational, and harder to police than traditional state-based crime. Drug cartels, people traffickers, and cybercriminals all operate through the same kind of networked logic as multinational corporations.",
+    quote:"The criminal economy is global, flexible, and networked — it operates in the same space of flows as legitimate capital.",
+    topics:["Globalisation","Transnational crime","Contemporary crime"]
+  },
+  "South":{
+    full:"Nigel South",meta:"British criminologist · Green Criminology",
+    idea:"South is a founder of <strong>green criminology</strong> — the study of environmental crimes and harms. He argued that traditional criminology ignores devastating environmental destruction because much of it is <em>legal</em>. He distinguished between <strong>primary green crimes</strong> (direct environmental harm — pollution, deforestation, poaching) and <strong>secondary green crimes</strong> (crimes that arise from the state's response to environmental issues, like corruption or cover-ups).",
+    quote:"Green criminology must move beyond law to focus on the full range of environmental harm.",
+    topics:["Green crime","Environmental harm","Contemporary crime"]
+  },
+  "White":{
+    full:"Rob White",meta:"Australian criminologist · Green Criminology",
+    idea:"White developed green criminology with a focus on <strong>justice for the environment and non-human species</strong>. He argued we should adopt a <strong>biocentric</strong> approach — recognising that animals and ecosystems have rights, not just humans. Corporate destruction of rainforests or factory farming causes massive harm but is legal — the law protects property, not nature. We need a new framework of environmental justice.",
+    quote:"Green criminology challenges us to think beyond human-centred notions of harm and justice.",
+    topics:["Green crime","Environmental justice","Contemporary crime"]
+  },
+  "Tombs & Whyte":{
+    full:"Steve Tombs & David Whyte",meta:"British critical criminologists · Corporate Crime",
+    idea:"Tombs and Whyte argue that <strong>corporate and state crime causes far more harm than street crime</strong> — workplace deaths, pollution, financial fraud — but is massively under-prosecuted. They coined the term <strong>state-corporate crime</strong>: when governments and corporations work together to break the law or cause harm with impunity. They argue the CJS is structurally biased towards protecting the powerful.",
+    quote:"Corporate crime kills more people than all street crime combined.",
+    topics:["State crime","Corporate crime","Green crime","Marxism"]
+  },
+  "Clarke":{
+    full:"Ron Clarke",meta:"British criminologist · Situational Crime Prevention",
+    idea:"Clarke developed <strong>situational crime prevention (SCP)</strong> — the idea that crime can be reduced by making it harder, riskier, or less rewarding to commit. Target hardening (locks, alarms, CCTV), increasing the chance of getting caught, and reducing the rewards of crime all work by changing the rational calculation of would-be offenders. Associated with right realism — focuses on opportunity, not social causes.",
+    quote:"Reducing the opportunities for crime is as important as dealing with its underlying causes.",
+    topics:["Crime prevention","Right realism","Situational crime prevention"]
+  },
+  "Garland":{
+    full:"David Garland",meta:"British criminologist, b.1955 · Sociology of Punishment",
+    idea:"Garland argued that in late modernity, crime control has shifted from <strong>rehabilitative optimism</strong> (the idea that offenders can be reformed) to a <strong>culture of control</strong> — focused on risk management, punitive imprisonment, and protecting the public. He identified two contradictory responses: <strong>adaptive strategies</strong> (crime prevention, multi-agency working) and <strong>punitive sovereignty</strong> (harsher sentences, prison expansion). The 'nothing works' thesis killed rehabilitation.",
+    quote:"We have moved from a culture of welfarism to a culture of control.",
+    topics:["Punishment","Crime control","Late modernity","CJS"]
+  },
+  "Christie":{
+    full:"Nils Christie",meta:"Norwegian criminologist, 1928–2015 · Victimology",
+    idea:"Christie identified the concept of the <strong>'ideal victim'</strong> — the type of person society and the CJS most readily recognises as a genuine crime victim: weak, innocent, doing something respectable, attacked by a stranger. Women, children, and the elderly fit this image. Working-class, Black, homeless, or sex worker victims are seen as 'unideal' — blamed, disbelieved, or ignored. This shapes policing, prosecution, and media coverage.",
+    quote:"The ideal victim is a person or category of individuals who, when hit by crime, most readily are given the complete and legitimate status of being a victim.",
+    topics:["Victims","Victimology","CJS","Media & crime"]
+  },
+  "Wilson & Kelling":{
+    full:"James Q. Wilson & George Kelling",meta:"American criminologists, 1982 · Right Realism",
+    idea:"Wilson and Kelling proposed the <strong>broken windows theory</strong>: minor disorder (graffiti, broken windows, rough sleeping) signals that an area is not cared for, which attracts more serious crime. The solution: zero tolerance policing of minor disorder to maintain order. Associated with right realism — focuses on individual choice and neighbourhood environment, not social inequality. Influenced 1990s New York policing under Giuliani.",
+    quote:"One unrepaired broken window is a signal that no one cares, and so breaking more windows costs nothing.",
+    topics:["Right realism","Crime prevention","Policing","Social order"]
+  },
+  "Comte":{
+    full:"Auguste Comte",meta:"French philosopher, 1798–1857 · Founder of Positivism",
+    idea:"Comte founded <strong>positivism</strong> — the idea that society can be studied scientifically, just like the physical world. He believed sociology could discover the laws governing social behaviour through observation and evidence, and use that knowledge to improve society. He called sociology 'the queen of the sciences'. His work laid the foundation for Durkheim's empirical approach.",
+    quote:"Know in order to predict, predict in order to control.",
+    topics:["Positivism","Sociological methods","Science"]
+  },
+  "Weber":{
+    full:"Max Weber",meta:"German sociologist, 1864–1920 · Interpretivism",
+    idea:"Weber disagreed with Durkheim's purely scientific approach. He argued sociology must understand the <strong>subjective meanings</strong> people give to their actions — he called this <strong>Verstehen</strong> (empathetic understanding). You can't explain why someone got married just by looking at statistics — you need to understand what marriage means to them. He also argued that class is not the only source of inequality — <strong>status</strong> (social honour) and <strong>party</strong> (political power) matter too.",
+    quote:"Sociology is a science which attempts the interpretive understanding of social action.",
+    topics:["Interpretivism","Social action theory","Stratification","Value freedom"]
+  },
+  "Atkinson":{
+    full:"J. Maxwell Atkinson",meta:"British sociologist · Interpretivism / Labelling",
+    idea:"Atkinson applied labelling theory to <strong>suicide statistics</strong>. He argued that official suicide statistics don't record actual suicides — they record the <em>verdicts of coroners</em>. Coroners use their own typifications (leaving a note, a history of depression, the method used) to decide whether a death counts as suicide. So Durkheim's 'social facts' about suicide are actually social constructions — they reflect how death is labelled, not an objective reality.",
+    quote:"The social construction of suicide statistics means we can never know the 'true' suicide rate.",
+    topics:["Positivism","Interpretivism","Research methods","Crime statistics"]
+  },
+  "Glaser & Strauss":{
+    full:"Barney Glaser & Anselm Strauss",meta:"American sociologists, 1967 · Grounded Theory",
+    idea:"Glaser and Strauss developed <strong>grounded theory</strong> — a qualitative research approach that builds theory from data rather than testing pre-existing hypotheses. Instead of starting with a theory and looking for evidence, the researcher immerses themselves in the data (usually interviews or observations) and allows categories and theories to <strong>emerge</strong> from it. Associated with the interpretivist tradition.",
+    quote:"Theory must emerge from — be grounded in — the data.",
+    topics:["Qualitative methods","Interpretivism","Research design"]
+  },
+  "BSA":{
+    full:"British Sociological Association",meta:"Professional body · Research Ethics",
+    idea:"The BSA sets the <strong>ethical guidelines</strong> for sociological research in the UK. Key principles: <strong>informed consent</strong> (participants must know they are being researched and agree freely), <strong>no harm to participants</strong> (physical or psychological), <strong>confidentiality and anonymity</strong>, and the <strong>right to withdraw</strong>. Covert research is only justifiable if no other method is possible and the social value of the research is high.",
+    quote:"Sociologists have a responsibility to ensure that the physical, social and psychological well-being of research participants is not adversely affected.",
+    topics:["Research ethics","Qualitative methods","Research design"]
+  },
+  "Popper":{
+    full:"Karl Popper",meta:"Austrian-British philosopher, 1902–1994 · Philosophy of Science",
+    idea:"Popper argued that science advances through <strong>falsification</strong> — a theory is only scientific if it makes predictions that could in principle be proved wrong. You can never <em>prove</em> a theory is true, only fail to disprove it. A theory that can explain everything (like 'God did it') is unscientific because nothing could falsify it. He was suspicious of Marxism and Freudianism for this reason — they seemed to explain every outcome, so they couldn't be tested.",
+    quote:"The criterion of the scientific status of a theory is its falsifiability, or refutability, or testability.",
+    topics:["Science","Positivism","Sociological theory","Research methods"]
+  },
+  "Kuhn":{
+    full:"Thomas Kuhn",meta:"American philosopher of science, 1922–1996 · Scientific Revolutions",
+    idea:"Kuhn argued that science doesn't progress smoothly — it goes through revolutions. At any time, scientists work within a <strong>paradigm</strong> — a shared framework of assumptions and methods (e.g. Newtonian physics). Anomalies build up until there's a <strong>paradigm shift</strong> (e.g. Einstein's relativity). Sociology, he implied, lacks a single dominant paradigm — different schools (Marxism, functionalism, feminism) fundamentally disagree, suggesting sociology is <strong>pre-scientific</strong>.",
+    quote:"Normal science does not aim at novelties of fact or theory and, when successful, finds none.",
+    topics:["Science","Sociology as science","Sociological theory"]
+  },
+  "Gouldner":{
+    full:"Alvin Gouldner",meta:"American sociologist, 1920–1980 · Critical Sociology",
+    idea:"Gouldner attacked the idea of <strong>value-free sociology</strong>. He argued that claiming to be neutral is itself a political choice — it supports the status quo by not challenging it. Sociologists who claim to just 'describe' society are actually serving the powerful. He called on sociologists to be honest about their values and use sociology to challenge inequality and oppression, not just describe it.",
+    quote:"The myth of a value-free sociology has been the bad faith of our era.",
+    topics:["Value freedom","Objectivity","Social policy","Sociological theory"]
+  },
+  "Giddens":{
+    full:"Anthony Giddens",meta:"British sociologist, b.1938 · Structuration & Late Modernity",
+    idea:"Giddens tried to bridge the structure vs agency debate with <strong>structuration theory</strong> — structures (like class, language, institutions) are both shaped by human action and shape that action in return. He also argued we live in <strong>late modernity</strong>, not postmodernity — society has become more reflexive and risky, but hasn't fundamentally broken with modernity. Individuals now engage in an ongoing '<strong>project of the self</strong>' — constantly constructing their identity through choices.",
+    quote:"Modernity is not post-traditional — it is a reflexive ordering of post-traditional conditions.",
+    topics:["Late modernity","Structuration","Identity","Sociological theory"]
+  },
+  "Beck":{
+    full:"Ulrich Beck",meta:"German sociologist, 1944–2015 · Risk Society",
+    idea:"Beck argued that modern societies have become <strong>risk societies</strong>. In the past, the main risks people faced were natural (floods, famine). Now, the biggest risks are <strong>manufactured</strong> — created by industrial progress itself: climate change, nuclear accidents, GM food. These risks are global, invisible, and can't be insured against. They cut across class lines (though the poor are still most vulnerable), making risk the new organising principle of society.",
+    quote:"Risk may be defined as a systematic way of dealing with hazards and insecurities induced and introduced by modernisation itself.",
+    topics:["Risk society","Late modernity","Green crime","Globalisation"]
+  },
+  "Lyotard":{
+    full:"Jean-François Lyotard",meta:"French philosopher, 1924–1998 · Postmodernism",
+    idea:"Lyotard is best known for declaring an '<strong>incredulity towards metanarratives</strong>' — the defining feature of postmodernism. Grand theories like Marxism, functionalism, and science all claim to tell the complete story of society and promise progress. Lyotard argued these are <strong>false certainties</strong> — in postmodern society, we no longer believe any single framework can capture truth. Knowledge is local, fragmented, and plural.",
+    quote:"I define postmodern as incredulity towards metanarratives.",
+    topics:["Postmodernism","Sociological theory","Knowledge","Late modernity"]
+  },
+  "Baudrillard":{
+    full:"Jean Baudrillard",meta:"French sociologist, 1929–2007 · Postmodernism",
+    idea:"Baudrillard argued that in postmodern society, <strong>images and simulations have replaced reality</strong>. We live in a world of <strong>hyperreality</strong> — where the copy is more real than the original. Media images of crime, for example, become more powerful in shaping public fear than actual crime. His most provocative claim: 'The Gulf War did not take place' — meaning the media simulation of the war was more real to most people than the actual conflict.",
+    quote:"The simulacrum is never what hides the truth — it is the truth that hides the fact there is none.",
+    topics:["Postmodernism","Media & crime","Hyperreality","Sociological theory"]
+  },
+  "Bauman":{
+    full:"Zygmunt Bauman",meta:"Polish-British sociologist, 1925–2017 · Liquid Modernity",
+    idea:"Bauman coined the term <strong>liquid modernity</strong> — all the 'solid' certainties of modern life (stable jobs, fixed communities, religious faith, class identity) have dissolved. We now live in a fluid, uncertain world where nothing is fixed. This gives individuals freedom but also produces anxiety and insecurity. Identity is now something you constantly construct through consumption choices, not something given by class or tradition. The Holocaust showed the dark potential of modernity's bureaucratic rationality.",
+    quote:"Liquid modernity is a world in which the conditions under which its members act change faster than it takes the ways of acting to consolidate into habits.",
+    topics:["Late modernity","Postmodernism","Identity","Consumption"]
+  },
+  "Walby":{
+    full:"Sylvia Walby",meta:"British feminist sociologist, b.1953 · Patriarchy Theory",
+    idea:"Walby defined <strong>patriarchy</strong> as a system of social structures and practices in which men dominate, oppress, and exploit women. She identified <strong>six structures of patriarchy</strong>: paid work (unequal pay, glass ceiling), household production (unpaid domestic labour), culture (sexist media), sexuality (control of women's bodies), violence (domestic and sexual violence), and the state (laws and policies that disadvantage women). All six must be challenged for equality.",
+    quote:"Patriarchy is a system of social structures and practices in which men dominate, oppress and exploit women.",
+    topics:["Feminism","Patriarchy","Gender inequality","Marxism critique"]
+  },
+  "Oakley":{
+    full:"Ann Oakley",meta:"British feminist sociologist, b.1944 · Feminist Methodology",
+    idea:"Oakley made the crucial distinction between <strong>sex</strong> (biological — male/female) and <strong>gender</strong> (social — masculine/feminine). Gender roles are not natural — they are learned through socialisation. She also critiqued mainstream sociological research methods as <strong>androcentric</strong> (male-biased), arguing that feminist research should be based on empathy and rapport rather than detached objectivity, giving voice to women's own experiences.",
+    quote:"Gender is a social product — it is what culture makes of biological sex.",
+    topics:["Feminism","Gender","Socialisation","Research methods"]
+  },
+  "Goffman":{
+    full:"Erving Goffman",meta:"Canadian-American sociologist, 1922–1982 · Interactionism",
+    idea:"Goffman studied how people <strong>manage their identity in everyday social interactions</strong>. His key concept: <strong>dramaturgy</strong> — social life is like a performance, with a front stage (where we present our best self) and back stage (where we're ourselves). He also developed the concept of <strong>stigma</strong> — a 'spoiled identity' attached to people with mental illness, disability, or criminal records. Labelled individuals are reduced from full persons to tainted, discounted ones.",
+    quote:"When an individual enters the presence of others, they commonly seek to acquire information about him or to bring into play information already possessed.",
+    topics:["Social interaction","Labelling","Stigma","Identity"]
+  },
+  "Garfinkel":{
+    full:"Harold Garfinkel",meta:"American sociologist, 1917–2011 · Ethnomethodology",
+    idea:"Garfinkel founded <strong>ethnomethodology</strong> — the study of how ordinary people make sense of the social world and maintain everyday reality. He ran famous <strong>breaching experiments</strong>: asking students to behave as if they were guests in their own homes, or to respond to 'how are you?' with a literal, detailed answer. These experiments revealed the hidden rules we all follow without knowing — and showed how fragile social order really is.",
+    quote:"The objective reality of social facts is sociology's fundamental phenomenon.",
+    topics:["Ethnomethodology","Social action theory","Research methods","Social order"]
+  },
+  "Berger & Luckmann":{
+    full:"Peter Berger & Thomas Luckmann",meta:"American sociologists, 1966 · Social Constructionism",
+    idea:"In <em>The Social Construction of Reality</em> (1966), Berger and Luckmann argued that social reality is not a fixed, objective thing — it is <strong>constructed by humans through interaction</strong> and then becomes taken for granted as 'just how things are' (reification). Institutions like the family, education, and religion are human creations that come to seem natural and inevitable. This is a phenomenological approach — focuses on subjective meaning-making.",
+    quote:"Society is a human product. Society is an objective reality. Man is a social product.",
+    topics:["Social constructionism","Interpretivism","Knowledge","Sociological theory"]
+  },
+  "Chambliss":{
+    full:"William Chambliss",meta:"American Marxist criminologist, 1933–2014",
+    idea:"Chambliss argued that <strong>law serves the interests of the ruling class</strong>. In his famous study of two gangs — the middle-class 'Saints' and the working-class 'Roughnecks' — both broke the law equally, but only the Roughnecks were arrested and prosecuted. The Saints came from families that could negotiate with police and courts. He also exposed <strong>state-organised crime</strong> — arguing that governments themselves engage in illegal activities.",
+    quote:"Acts are defined as criminal because it is in the interest of the ruling class to so define them.",
+    topics:["Marxist criminology","Class & crime","Law","State crime"]
+  },
+  "Harvey":{
+    full:"David Harvey",meta:"British Marxist geographer, b.1935 · Postmodernity critique",
+    idea:"Harvey offered a Marxist critique of postmodernism. He argued that <strong>postmodern culture is not a sign of a new society but a product of late capitalism</strong> — specifically 'flexible accumulation', where capital moves rapidly around the globe. The fragmentation, style-mixing, and identity flux of postmodernity reflects capitalism's need for flexible workers and consumers, not a genuine cultural revolution. Inequality and class remain central.",
+    quote:"Postmodernism is what you get when capitalism goes flexible.",
+    topics:["Postmodernism critique","Marxism","Late modernity","Identity"]
+  },
+  "Harding":{
+    full:"Sandra Harding",meta:"American feminist philosopher, b.1935 · Standpoint Epistemology",
+    idea:"Harding argued that <strong>all knowledge reflects the social position of those who produce it</strong>. Male-dominated science claims objectivity but actually reflects male, Western, bourgeois perspectives. Her concept of <strong>standpoint epistemology</strong>: knowledge produced from the standpoint of marginalised groups (women, minorities) is actually <em>more</em> objective, because marginalised people must understand both their own perspective and the dominant one to survive.",
+    quote:"The view from the margins is less distorted than the view from the top.",
+    topics:["Feminist methodology","Objectivity","Value freedom","Research methods"]
+  },
+  "Dobash & Dobash":{
+    full:"Rebecca & Russell Dobash",meta:"British sociologists · Feminist Criminology",
+    idea:"The Dobashes conducted landmark research into <strong>domestic violence</strong>, interviewing 109 women in Scottish women's refuges. They argued that domestic violence is not individual pathology but a <strong>product of patriarchal power structures</strong> — men use violence to control women. Traditional criminology and the police had treated domestic violence as a private matter. Their research was central to getting domestic violence recognised and prosecuted as a serious crime.",
+    quote:"Wife assault is not a private trouble but a public issue rooted in patriarchy.",
+    topics:["Domestic violence","Feminist criminology","Victims","Patriarchy"]
+  },
+  "Cloward & Ohlin":{
+    full:"Richard Cloward & Lloyd Ohlin",meta:"American criminologists, 1960 · Differential Opportunity Theory",
+    idea:"Cloward and Ohlin extended Merton and Cohen by pointing out that people don't just lack legitimate opportunities — they also have <strong>differential access to illegitimate opportunities</strong>. This produces three types of subculture: <strong>criminal subcultures</strong> (stable areas where criminal careers are available — organised crime), <strong>conflict subcultures</strong> (unstable areas with high violence — gang warfare for territory), and <strong>retreatist subcultures</strong> (those who fail at both — drug users).",
+    quote:"Delinquent subcultures reflect the conditions under which access to both legitimate and illegitimate opportunity is differentially distributed.",
+    topics:["Subcultures","Strain theory","Crime & deviance","Class & crime"]
+  },
+  "Schutz":{
+    full:"Alfred Schutz",meta:"Austrian-American philosopher, 1899–1959 · Phenomenology",
+    idea:"Schutz applied phenomenological philosophy to sociology. He argued that social reality is built from <strong>shared stocks of common sense knowledge</strong> — the taken-for-granted background knowledge we use to make sense of everyday life. Sociology should study how actors construct a shared social world through meaningful action. This is the foundation of <strong>interpretivism</strong> — social reality is inter-subjective, constructed through shared meanings, not an objective external fact.",
+    quote:"The world of everyday life is the paramount reality.",
+    topics:["Phenomenology","Interpretivism","Social action theory","Social order"]
+  },
+  "Mead":{
+    full:"George Herbert Mead",meta:"American philosopher, 1863–1931 · Symbolic Interactionism",
+    idea:"Mead is the founder of <strong>symbolic interactionism</strong> — the theory that humans act based on the <em>meanings</em> they attach to things, and those meanings are created and modified through social interaction. He argued the <strong>self</strong> develops through social interaction: the 'I' (the spontaneous self) and the 'me' (the social self that internalises others' expectations — the 'generalised other'). Society exists in and through the interactions of individuals.",
+    quote:"The self is something which has a development; it is not initially there at birth, but arises in the process of social experience.",
+    topics:["Symbolic interactionism","Social action theory","Identity","Socialisation"]
+  },
+  "Cohen & Felson":{
+    full:"Lawrence Cohen & Marcus Felson",meta:"American criminologists, 1979 · Routine Activities Theory",
+    idea:"Cohen and Felson's <strong>routine activities theory</strong> says crime occurs when three things come together at the same time and place: a <strong>motivated offender</strong>, a <strong>suitable target</strong>, and the <strong>absence of a capable guardian</strong>. Crime rates rose in the 1960s–70s not because more people wanted to commit crime but because routine activities changed — more women in work, more people out of the home, more portable consumer goods — creating more criminal opportunities.",
+    quote:"Crime occurs when a motivated offender converges with a suitable target in the absence of capable guardianship.",
+    topics:["Routine activities","Crime prevention","Victims","Right realism"]
+  }
+};
+
+function showTheorist(name) {
+  const t = THEORISTS[name];
+  if (!t) return;
+  const existing = document.getElementById('th-overlay');
+  if (existing) existing.remove();
+  const div = document.createElement('div');
+  div.className = 'th-overlay';
+  div.id = 'th-overlay';
+  div.onclick = (e) => { if(e.target===div) div.remove(); };
+  div.innerHTML = `
+    <div class="th-modal">
+      <div class="th-modal-name">${t.full}</div>
+      <div class="th-modal-meta">${t.meta}</div>
+      <div class="th-modal-idea">${t.idea}</div>
+      <div class="th-modal-quote">"${t.quote}"</div>
+      <div class="th-modal-topics">${t.topics.map(tp=>`<span class="badge b-purple">${tp}</span>`).join('')}</div>
+      <button class="th-modal-close" onclick="document.getElementById('th-overlay').remove()">Close</button>
+    </div>
+  `;
+  document.body.appendChild(div);
+}
+
+</script>
+</body>
+</html>
